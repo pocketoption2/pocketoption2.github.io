@@ -1426,24 +1426,68 @@ h1 {
   }
 }
 @media (min-width: 1101px) {
-  .hg {
-    gap: 88px;
+  .hero.hg {
+    position: relative;
+    grid-template-columns: 1fr;
+    padding-block: 120px 132px;
+  }
+  .hero.hg > div:first-child {
+    position: relative;
+    z-index: 2;
+    max-width: 560px;
   }
   .hero h1 {
-    font-size: 58px;
+    font-size: 62px;
   }
   .hero .lead {
-    max-width: 460px;
+    max-width: 480px;
   }
-  .hero .trust {
-    gap: 8px 20px;
-    font-size: 13px;
+  .hero .dev {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    z-index: 1;
+    width: 1000px;
+    margin: 0;
+    transform: translateY(-50%);
   }
-  .dev .ph {
-    left: 28px;
-    bottom: -48px;
-    width: 140px;
+  .hero .dev .lap {
+    padding: 0;
+    background: none;
+    box-shadow: none;
+    -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 28%);
+    mask-image: linear-gradient(90deg, transparent 0, #000 28%);
   }
+  .hero .dev .lap img {
+    border-radius: 12px;
+    opacity: 0.9;
+  }
+  .hero .dev .ph {
+    left: 120px;
+    bottom: -60px;
+    width: 160px;
+  }
+}
+.hero .trust {
+  gap: 10px 24px;
+}
+.hero .trust li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.hero .trust li::before {
+  display: none;
+}
+.hero .trust svg {
+  width: 16px;
+  height: 16px;
+  flex: none;
+  fill: none;
+  stroke: #6f9bff;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
 .feat .fi {
   display: block;
