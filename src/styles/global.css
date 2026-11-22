@@ -1402,3 +1402,28 @@ h1 {
 .prose .cover + * {
   margin-top: 32px;
 }
+.stores {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  max-width: 460px;
+}
+@media (max-width: 640px) {
+  .stores {
+    gap: 10px;
+  }
+  .stores a {
+    padding: 10px 10px 10px 8px;
+    gap: 10px;
+    font-size: 13.5px;
+  }
+  .stores .ic {
+    width: 30px;
+    height: 30px;
+  }
+}
+@media (max-width: 360px) {
+  .stores a {
+    gap: 8px;
+    font-size: 13px;
+  }
+}
