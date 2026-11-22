@@ -1448,3 +1448,54 @@ h1 {
     height: 72px;
   }
 }
+.ft details,
+.ft details:first-of-type {
+  border: 0;
+}
+.ft summary {
+  padding: 0;
+  cursor: default;
+  pointer-events: none;
+}
+.ft summary::after {
+  display: none;
+}
+@media (max-width: 640px) {
+  .ft {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+  .ft > div:first-child {
+    margin-bottom: 32px;
+  }
+  .ft details {
+    border-bottom: 1px solid var(--dline);
+  }
+  .ft details:first-of-type {
+    border-top: 1px solid var(--dline);
+  }
+  .ft summary {
+    pointer-events: auto;
+    cursor: pointer;
+    padding: 20px 36px 20px 0;
+  }
+  .ft summary h2 {
+    margin: 0;
+    font-size: 17px;
+  }
+  .ft summary::after {
+    display: block;
+    top: 25px;
+    border-color: #8e9bb5;
+  }
+  .ft details[open] summary::after {
+    top: 29px;
+  }
+  .ft details ul {
+    padding-bottom: 16px;
+  }
+  .risk {
+    margin-top: 0;
+    border-top: 0;
+  }
+}

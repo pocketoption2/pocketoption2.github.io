@@ -20,8 +20,10 @@ const year = new Date().getFullYear();
         </p>
       </div>
       {FOOTER.map((col) => (
-        <div>
-          <h2>{col.title}</h2>
+        <details open>
+          <summary>
+            <h2>{col.title}</h2>
+          </summary>
           <ul>
             {col.links.map((l) => (
               <li>
@@ -29,7 +31,7 @@ const year = new Date().getFullYear();
               </li>
             ))}
           </ul>
-        </div>
+        </details>
       ))}
     </div>
     <p class="risk">
@@ -58,3 +60,11 @@ const year = new Date().getFullYear();
     </div>
   </div>
 </footer>
+
+<script>
+  const mq = matchMedia("(max-width: 640px)");
+  const sync = () =>
+    document.querySelectorAll<HTMLDetailsElement>(".ft details").forEach((d) => (d.open = !mq.matches));
+  sync();
+  mq.addEventListener("change", sync);
+</script>
