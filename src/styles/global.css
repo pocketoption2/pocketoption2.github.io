@@ -1381,3 +1381,8 @@ h1 {
 .end .btn-p:hover {
   background: #eef3ff;
 }
+@media (max-width: 640px) {
+  .hero .trust {
+    display: none;
+  }
+}
