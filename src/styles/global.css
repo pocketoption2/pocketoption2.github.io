@@ -1362,9 +1362,16 @@ h1 {
 .trust {
   gap: 10px 24px;
 }
-.dev .ph {
-  width: 150px;
-  bottom: -56px;
+@media (min-width: 641px) {
+  .dev .ph {
+    width: 150px;
+    bottom: -56px;
+  }
+}
+@media (max-width: 640px) {
+  .hero .dev {
+    margin-top: 32px;
+  }
 }
 .btn-p {
   background: linear-gradient(90deg, #0098f9 0%, #003edd 100%);
