@@ -13,12 +13,24 @@ const title = "Pocket Option: Trading Platform with $5 Deposit & Free Demo";
 const description =
   "Trade on Pocket Option with a $5 deposit, $1 trades and a free $50,000 demo. PocketOption fees, payouts, app and 170+ payment methods explained.";
 const features = [
-  ["Social trading", "Follow experienced traders and copy their positions automatically, with your own amount limits."],
-  ["Signals and indicators", "Built-in trading signals plus RSI, MACD, Bollinger Bands and more on every chart."],
-  ["Express trades", "Combine several forecasts into one trade for a higher potential payout, up to 218%."],
-  ["Pending trades", "Open a trade automatically at a chosen price or time instead of watching the chart."],
-  ["Tournaments", "Compete on a separate balance for prize pools, with free and paid entry options."],
-  ["Bonuses and cashback", "Promo codes, deposit bonuses and cashback offers that appear in your account over time."],
+  [
+    "social",
+    "Social trading",
+    "Follow experienced traders and copy their positions automatically, with your own amount limits.",
+  ],
+  [
+    "signals",
+    "Signals and indicators",
+    "Built-in trading signals plus RSI, MACD, Bollinger Bands and more on every chart.",
+  ],
+  ["express", "Express trades", "Combine several forecasts into one trade for a higher potential payout, up to 218%."],
+  ["pending", "Pending trades", "Open a trade automatically at a chosen price or time instead of watching the chart."],
+  ["tournaments", "Tournaments", "Compete on a separate balance for prize pools, with free and paid entry options."],
+  [
+    "bonus",
+    "Bonuses and cashback",
+    "Promo codes, deposit bonuses and cashback offers that appear in your account over time.",
+  ],
 ];
 ---
 
@@ -156,8 +168,9 @@ const features = [
         <p>Tools for learning, following other traders and getting more from each deposit.</p>
       </div>
       <div class="feat">
-        {features.map(([h, p]) => (
+        {features.map(([i, h, p]) => (
           <div>
+            <img class="fi" src={`/icons/feat-${i}.svg`} width="88" height="88" alt="" loading="lazy" />
             <h3>{h}</h3>
             <p>{p}</p>
           </div>

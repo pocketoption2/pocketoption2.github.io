@@ -1447,3 +1447,15 @@ h1 {
     width: 140px;
   }
 }
+.feat .fi {
+  display: block;
+  width: 88px;
+  height: 88px;
+  margin: -8px 0 18px -6px;
+}
+@media (max-width: 640px) {
+  .feat .fi {
+    width: 72px;
+    height: 72px;
+  }
+}
