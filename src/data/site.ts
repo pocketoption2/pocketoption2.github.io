@@ -5,6 +5,11 @@ export const SITE = {
   updated: "2026-11-23",
 };
 
+export const VERIFY = {
+  google: "fUL0FjmS-ZiG5MUbaLgeCC8EMfhO1KJXFtTL91vniP4",
+  bing: "",
+};
+
 const AFFILIATE =
   "https://u3.shortink.io/register?utm_campaign=65155&utm_source=affiliate&utm_medium=sr&a=bsNUQyo6TJ9wXJ&ac=lk";
 
