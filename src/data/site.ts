@@ -8,11 +8,12 @@ export const SITE = {
 const AFFILIATE =
   "https://u3.shortink.io/register?utm_campaign=65155&utm_source=affiliate&utm_medium=sr&a=bsNUQyo6TJ9wXJ&ac=lk";
 
-// Sign-up, login, demo and app all use the same affiliate link.
+// Sign-up, login, demo and the iPhone/desktop/Telegram app links share the main affiliate link; Android has its own.
 export const LINKS = {
   register: AFFILIATE,
   demo: AFFILIATE,
   app: AFFILIATE,
+  android: "https://potrade.onelink.me/oyit/webapp?c=65155&a=bsNUQyo6TJ9wXJ&af_cost_model=revshare&ac=app",
 } as const;
 
 export type LinkKey = keyof typeof LINKS;
