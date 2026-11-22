@@ -795,7 +795,14 @@ details .a {
 
 /* end cta */
 .end {
-  background: var(--ac);
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  background:
+    url("/icons/end-chart.svg") right -40px bottom -70px / 600px auto no-repeat,
+    radial-gradient(circle at 85% 0%, rgba(127, 233, 255, 0.35), transparent 50%),
+    linear-gradient(90deg, #0098f9 0%, #003edd 100%);
+  box-shadow: 0 24px 60px -24px rgba(0, 62, 221, 0.55);
   color: #fff;
   border-radius: 24px;
   padding: 72px;
@@ -821,10 +828,12 @@ details .a {
 }
 .end .btn-p {
   background: #fff;
-  color: var(--ac);
+  color: #003edd;
+  box-shadow: 0 8px 20px -8px rgba(0, 20, 80, 0.45);
 }
 .end .btn-g {
-  border-color: rgba(255, 255, 255, 0.4);
+  border-color: rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.06);
   color: #fff;
 }
 .end .btn-g:hover {
@@ -1497,5 +1506,20 @@ h1 {
   .risk {
     margin-top: 0;
     border-top: 0;
+  }
+}
+.end .nw {
+  white-space: nowrap;
+}
+@media (max-width: 640px) {
+  .end {
+    background-position:
+      right -120px bottom -40px,
+      0 0,
+      0 0;
+    background-size:
+      460px auto,
+      auto,
+      auto;
   }
 }

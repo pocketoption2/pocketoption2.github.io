@@ -2,14 +2,14 @@
 import { go } from "../data/site";
 const {
   title = "Try Pocket Option risk-free on the demo",
-  text = "$50,000 virtual balance. No deposit, no registration.",
+  text = "Practise with $50,000 in virtual funds and learn the platform before you trade with real money.",
 } = Astro.props;
 ---
 
 <div class="w">
   <div class="end">
     <div>
-      <h2>{title}</h2>
+      <h2 set:html={title.replace("risk-free", '<span class="nw">risk-free</span>')} />
       <p>{text}</p>
     </div>
     <div class="cta">
