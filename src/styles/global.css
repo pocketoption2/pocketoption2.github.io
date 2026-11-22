@@ -1366,3 +1366,18 @@ h1 {
   width: 150px;
   bottom: -56px;
 }
+.btn-p {
+  background: linear-gradient(90deg, #0098f9 0%, #003edd 100%);
+  box-shadow: 0 10px 24px -12px rgba(0, 110, 240, 0.8);
+}
+.btn-p:hover {
+  background: linear-gradient(90deg, #008aec 0%, #0035c4 100%);
+}
+.end .btn-p,
+.end .btn-p:hover {
+  background: #fff;
+  box-shadow: none;
+}
+.end .btn-p:hover {
+  background: #eef3ff;
+}
