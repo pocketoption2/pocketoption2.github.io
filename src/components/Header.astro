@@ -1,6 +1,6 @@
 ---
 import Logo from "./Logo.astro";
-import { NAV, DRAWER_NAV, go } from "../data/site";
+import { NAV, go } from "../data/site";
 const path = Astro.url.pathname;
 ---
 
@@ -48,7 +48,7 @@ const path = Astro.url.pathname;
     </button>
   </div>
   <nav class="dn" aria-label="Mobile">
-    {DRAWER_NAV.map((l) => (
+    {NAV.map((l) => (
       <a href={l.href}>{l.label}</a>
     ))}
   </nav>

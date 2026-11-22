@@ -28,17 +28,6 @@ export const NAV = [
   { href: "/faq/", label: "FAQ" },
 ];
 
-export const DRAWER_NAV = [
-  { href: "/review/", label: "Review" },
-  { href: "/demo-account/", label: "Demo account" },
-  { href: "/app/", label: "App" },
-  { href: "/deposit-withdrawal/", label: "Deposits & withdrawals" },
-  { href: "/bonus-promo-code/", label: "Bonus & promo codes" },
-  { href: "/how-to-trade/", label: "How to trade" },
-  { href: "/blog/", label: "Blog" },
-  { href: "/faq/", label: "FAQ" },
-];
-
 export const FOOTER = [
   {
     title: "Pocket Option",
