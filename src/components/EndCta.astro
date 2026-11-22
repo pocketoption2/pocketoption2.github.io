@@ -1,0 +1,24 @@
+---
+import { go } from "../data/site";
+const {
+  title = "Try Pocket Option risk-free on the demo",
+  text = "$50,000 virtual balance. No deposit, no registration.",
+} = Astro.props;
+---
+
+<div class="w">
+  <div class="end">
+    <div>
+      <h2>{title}</h2>
+      <p>{text}</p>
+    </div>
+    <div class="cta">
+      <a class="btn btn-p" href={go("demo")} rel="sponsored nofollow">
+        Try the free demo
+      </a>
+      <a class="btn btn-g" href={go("register")} rel="sponsored nofollow">
+        Open account
+      </a>
+    </div>
+  </div>
+</div>

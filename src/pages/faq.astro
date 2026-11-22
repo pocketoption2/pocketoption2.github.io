@@ -1,0 +1,128 @@
+---
+import Base from "../layouts/Base.astro";
+import PageHero from "../components/PageHero.astro";
+import Faq from "../components/Faq.astro";
+import EndCta from "../components/EndCta.astro";
+import { faqSchema, type QA } from "../data/faq";
+import { SITE } from "../data/site";
+
+const groups: { title: string; items: QA[] }[] = [
+  {
+    title: "About Pocket Option",
+    items: [
+      {
+        q: "What is Pocket Option?",
+        a: "Pocket Option is an online trading platform launched in 2017. It lets you trade currencies, crypto, stocks, commodities and indices from $1 per trade on web, Android, iPhone and Telegram.",
+      },
+      {
+        q: "Is PocketOption the same as Pocket Option?",
+        a: "Yes. PocketOption is the one-word spelling of the same broker and the same platform at pocketoption.com.",
+      },
+      {
+        q: "Is Pocket Option legit?",
+        a: 'It has operated since 2017 and reports more than 10 million registered users. It is an offshore broker without tier-1 regulation, so it offers less protection than regulated brokers. See our <a href="/review/">review</a>.',
+      },
+      {
+        q: "Which countries can't use Pocket Option?",
+        a: "Pocket Option does not serve residents of the EEA, the USA, the UK, Israel, Japan, the Philippines and Brazil.",
+      },
+    ],
+  },
+  {
+    title: "Account and demo",
+    items: [
+      {
+        q: "How do I open a Pocket Option account?",
+        a: "Sign up with your email or Google account, confirm your email, then complete verification in your profile before your first withdrawal.",
+      },
+      {
+        q: "Is the Pocket Option demo free?",
+        a: 'Yes. The demo has $50,000 in virtual funds, opens in one click without registration and has no time limit. See the <a href="/demo-account/">demo account page</a>.',
+      },
+      {
+        q: "Can I log in with Google?",
+        a: 'Yes. If you registered with Google and later want to log in with email and password, use password recovery first to set a password. See <a href="/blog/pocket-option-login/">Pocket Option login help</a>.',
+      },
+      {
+        q: "What documents do I need for verification?",
+        a: "A valid photo ID and, in some cases, proof of address. Your profile details must match your documents.",
+      },
+    ],
+  },
+  {
+    title: "Deposits and withdrawals",
+    items: [
+      { q: "What is the minimum deposit?", a: "$5 for most payment methods. The minimum trade amount is $1." },
+      {
+        q: "Does Pocket Option charge fees?",
+        a: "Pocket Option charges no commission on deposits or withdrawals. Your bank, card issuer or crypto network may charge their own fees.",
+      },
+      {
+        q: "Is there a minimum withdrawal?",
+        a: "No minimum or maximum withdrawal amount applies when you have no active deposit bonus.",
+      },
+      {
+        q: "How long do withdrawals take?",
+        a: "After verification, e-wallet and crypto withdrawals often arrive within a day. Cards and bank transfers can take several business days.",
+      },
+    ],
+  },
+  {
+    title: "Trading",
+    items: [
+      {
+        q: "What can I trade on Pocket Option?",
+        a: "More than 100 assets: currency pairs, cryptocurrencies, stocks, commodities and indices, plus OTC versions that stay open on weekends.",
+      },
+      {
+        q: "What is the maximum payout?",
+        a: "Single trades typically pay up to 92% depending on the asset and time of day. Express trades, which combine several forecasts, can pay up to 218%.",
+      },
+      {
+        q: "Does Pocket Option have copy trading?",
+        a: "Yes. Social trading lets you copy other traders automatically and set your own limits.",
+      },
+      {
+        q: "Is there a Pocket Option app?",
+        a: 'Yes, for Android (Google Play or APK), iPhone and iPad as a web app, desktop browsers and Telegram. See the <a href="/app/">app page</a>.',
+      },
+    ],
+  },
+];
+const all = groups.flatMap((g) => g.items);
+const crumbs = [{ href: "/", label: "Home" }, { label: "FAQ" }];
+const bc = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: `${SITE.url}/` },
+    { "@type": "ListItem", position: 2, name: "FAQ", item: `${SITE.url}/faq/` },
+  ],
+};
+---
+
+<Base
+  title="Pocket Option FAQ: Account, Deposits, Withdrawals, App"
+  description="Answers to the most asked questions about Pocket Option and PocketOption: legitimacy, countries, demo, verification, minimum deposit, fees, withdrawals, payouts and the app."
+  schema={[faqSchema(all), bc]}
+>
+  <PageHero
+    slot="hero"
+    title="Pocket Option FAQ"
+    lead="Straight answers to the questions people ask most about Pocket Option, from opening an account to getting paid."
+    crumbs={crumbs}
+    updated={SITE.updated}
+  />
+  {groups.map((g, i) => (
+    <section class={i % 2 ? "alt" : ""}>
+      <div class="w faq">
+        <div class="sh">
+          <h2>{g.title}</h2>
+        </div>
+        <Faq items={g.items} openFirst={i === 0} />
+      </div>
+    </section>
+  ))}
+  <div style="height:112px" />
+  <EndCta />
+</Base>

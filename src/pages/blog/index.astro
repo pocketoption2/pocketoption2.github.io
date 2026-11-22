@@ -1,0 +1,36 @@
+---
+import Base from "../../layouts/Base.astro";
+import PageHero from "../../components/PageHero.astro";
+import EndCta from "../../components/EndCta.astro";
+import { POSTS, fmtDate } from "../../data/posts";
+const crumbs = [{ href: "/", label: "Home" }, { label: "Blog" }];
+---
+
+<Base
+  title="Pocket Option Blog: Tips, Explainers and How-Tos"
+  description="Practical Pocket Option articles: login help, OTC assets, minimum deposit, trading tips and platform updates for PocketOption users."
+>
+  <PageHero
+    slot="hero"
+    title="Pocket Option blog"
+    lead="Practical explainers and how-tos for Pocket Option users, written to answer one question properly."
+    crumbs={crumbs}
+  />
+  <section>
+    <div class="w">
+      <ul class="posts">
+        {POSTS.map((p) => (
+          <li>
+            <a href={`/blog/${p.slug}/`}>
+              <time datetime={p.date}>{fmtDate(p.date)}</time>
+              <h2>{p.title}</h2>
+              <p>{p.excerpt}</p>
+              <span>Read article →</span>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+  <EndCta />
+</Base>

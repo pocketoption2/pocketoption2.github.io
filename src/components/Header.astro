@@ -1,0 +1,75 @@
+---
+import Logo from "./Logo.astro";
+import { NAV, DRAWER_NAV, go } from "../data/site";
+const path = Astro.url.pathname;
+---
+
+<header class="site">
+  <div class="w hd">
+    <a class="logo" href="/" aria-label="Pocket Option home">
+      <Logo />
+      Pocket Option
+    </a>
+    <nav aria-label="Main">
+      {NAV.map((l) => (
+        <a href={l.href} aria-current={path.startsWith(l.href) ? "page" : undefined}>
+          {l.label}
+        </a>
+      ))}
+    </nav>
+    <div class="r">
+      <a class="t" href={go("demo")} rel="sponsored nofollow">
+        Try demo
+      </a>
+      <a class="btn btn-p btn-sm" href={go("register")} rel="sponsored nofollow">
+        Open account
+      </a>
+      <button class="burger" type="button" aria-label="Open menu" aria-controls="drawer" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </div>
+</header>
+<div class="scrim" data-close></div>
+<aside class="drawer" id="drawer" aria-label="Menu" aria-hidden="true">
+  <div class="dh">
+    <a class="logo" href="/">
+      <Logo />
+      Pocket Option
+    </a>
+    <button class="x" type="button" aria-label="Close menu" data-close>
+      &times;
+    </button>
+  </div>
+  <nav class="dn" aria-label="Mobile">
+    {DRAWER_NAV.map((l) => (
+      <a href={l.href}>{l.label}</a>
+    ))}
+  </nav>
+  <div class="dc">
+    <a class="btn btn-p" href={go("register")} rel="sponsored nofollow">
+      Open a Pocket Option account
+    </a>
+    <a class="btn btn-g" href={go("demo")} rel="sponsored nofollow">
+      Try the free demo
+    </a>
+  </div>
+  <p class="dr">Trading involves risk. Only invest what you can afford to lose.</p>
+</aside>
+<script>
+  const body = document.body;
+  const btn = document.querySelector<HTMLButtonElement>(".burger")!;
+  const drawer = document.getElementById("drawer")!;
+  const set = (open: boolean) => {
+    body.classList.toggle("open", open);
+    btn.setAttribute("aria-expanded", String(open));
+    drawer.setAttribute("aria-hidden", String(!open));
+    if (open) drawer.querySelector<HTMLElement>(".x")?.focus();
+  };
+  btn.addEventListener("click", () => set(true));
+  document.querySelectorAll("[data-close]").forEach((el) => el.addEventListener("click", () => set(false)));
+  document.addEventListener("keydown", (e) => e.key === "Escape" && set(false));
+  matchMedia("(min-width: 1101px)").addEventListener("change", (e) => e.matches && set(false));
+</script>

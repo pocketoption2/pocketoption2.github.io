@@ -1,0 +1,154 @@
+---
+import Article from "../layouts/Article.astro";
+import { go } from "../data/site";
+const toc = [
+  { id: "verdict", label: "Verdict" },
+  { id: "company", label: "Company and availability" },
+  { id: "platform", label: "Platform and trading" },
+  { id: "costs", label: "Costs and payouts" },
+  { id: "money", label: "Deposits and withdrawals" },
+  { id: "safety", label: "Is Pocket Option safe?" },
+  { id: "who", label: "Who it suits" },
+];
+---
+
+<Article
+  title="Pocket Option Review 2026: Is PocketOption Legit?"
+  description="An honest Pocket Option review: who runs PocketOption, where it is available, payouts, fees, deposits, withdrawals, demo account and the risks to weigh before you sign up."
+  h1="Pocket Option review: is it worth your money?"
+  lead="We tested the platform on the demo and went through the account, deposit and withdrawal rules. Here is what Pocket Option does well, where it falls short and who it is for."
+  crumb="Review"
+  toc={toc}
+  article
+  published="2026-11-15"
+>
+  <h2 id="verdict">Verdict</h2>
+  <p>
+    Pocket Option is one of the easiest brokers to start with: a <strong>$5 minimum deposit</strong>,{" "}
+    <strong>$1 trades</strong> and a demo account that opens without registration. The web platform is fast and clean,
+    payment options are unusually broad, and social trading is built in.
+  </p>
+  <p>
+    The trade-off is regulation. Pocket Option is an offshore broker, and short-term fixed-time trading is high risk by
+    design. It is a reasonable choice for practising and trading small amounts, not a place to park savings.
+  </p>
+  <table>
+    <thead>
+      <tr>
+        <th>Area</th>
+        <th>Our take</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Ease of use</td>
+        <td>Excellent. One-click demo, clear interface on web and mobile.</td>
+      </tr>
+      <tr>
+        <td>Costs</td>
+        <td>No deposit or withdrawal commission from Pocket Option. Payouts up to 92% per trade.</td>
+      </tr>
+      <tr>
+        <td>Payments</td>
+        <td>170+ methods including cards, e-wallets, mobile money and crypto.</td>
+      </tr>
+      <tr>
+        <td>Tools</td>
+        <td>Indicators, signals, copy trading, pending and express trades.</td>
+      </tr>
+      <tr>
+        <td>Regulation</td>
+        <td>Offshore. Not overseen by a tier-1 regulator.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2 id="company">Company and availability</h2>
+  <p>
+    Pocket Option launched in 2017. By its own figures it passed one million users in 2018 and more than 10 million
+    registered users in 2019. The site and platform are available in over 40 languages.
+  </p>
+  <p>
+    The broker does not accept clients from the{" "}
+    <strong>EEA, the USA, the UK, Israel, Japan, the Philippines and Brazil</strong>. If you live in one of these
+    countries, you will not be able to open a real account, and you should not try to work around the restriction.
+  </p>
+
+  <h2 id="platform">Platform and trading</h2>
+  <p>
+    Everything runs in the browser, so there is nothing to install on a desktop. The same account works on the{" "}
+    <a href="/app/">Android app, the iPhone web app and the Telegram bot</a>. Charts load quickly, and switching assets
+    or timeframes takes a click.
+  </p>
+  <h3>Trade types</h3>
+  <ul>
+    <li>
+      <strong>Quick trading:</strong> forecast whether the price will be higher or lower after a set time, from a few
+      seconds to several hours.
+    </li>
+    <li>
+      <strong>Pending trades:</strong> open a position automatically when the price or time you set is reached.
+    </li>
+    <li>
+      <strong>Express trades:</strong> combine several forecasts; all must be correct, and the payout can reach 218%.
+    </li>
+    <li>
+      <strong>Social trading:</strong> copy the trades of other users automatically.
+    </li>
+  </ul>
+  <h3>Assets</h3>
+  <p>
+    More than 100 instruments: major and minor currency pairs, cryptocurrencies, stocks such as Apple and Tesla,
+    commodities like gold and oil, and indices. OTC versions of popular assets remain open on weekends, with prices
+    quoted by the broker rather than an exchange.
+  </p>
+
+  <h2 id="costs">Costs and payouts</h2>
+  <p>
+    Pocket Option does not charge commission on deposits or withdrawals, although your bank or payment provider may. The
+    broker earns from the difference between what traders win and lose, which is why the payout on a correct forecast is
+    less than 100% of the stake.
+  </p>
+  <p>
+    Payouts vary by asset and time of day, typically between 70% and 92% on major pairs. OTC assets and quieter hours
+    tend to pay less. Always check the figure shown above the Buy and Sell buttons before opening a trade.
+  </p>
+
+  <h2 id="money">Deposits and withdrawals</h2>
+  <p>
+    The minimum deposit is $5 for most methods. Deposits are usually credited within minutes. Withdrawals require a
+    verified account and are paid back to a method you used to deposit, in line with anti-money-laundering rules. Pocket
+    Option sets no minimum withdrawal amount when no deposit bonus is active. Our{" "}
+    <a href="/deposit-withdrawal/">deposits and withdrawals page</a> explains each step.
+  </p>
+
+  <h2 id="safety">Is Pocket Option safe?</h2>
+  <p>
+    Pocket Option has a long track record and millions of users, and most user complaints we found concern bonus
+    conditions or verification delays rather than missing funds. That said, offshore brokers offer less protection than
+    regulated ones: there is no investor compensation scheme, and disputes are handled by the company itself.
+  </p>
+  <div class="note">
+    Practical rule: verify your account before your first deposit, avoid bonuses you do not fully understand, and never
+    trade money you need for living costs.
+  </div>
+
+  <h2 id="who">Who it suits</h2>
+  <ul>
+    <li>
+      <strong>Good fit:</strong> beginners who want to learn on a free demo, traders with small budgets, and users in
+      regions where local payment methods matter.
+    </li>
+    <li>
+      <strong>Poor fit:</strong> anyone who needs a tier-1 regulated broker, long-term investors, and residents of the
+      restricted countries listed above.
+    </li>
+  </ul>
+  <p>
+    The fastest way to decide is to{" "}
+    <a href={go("demo")} rel="sponsored nofollow">
+      try the demo
+    </a>
+    . It costs nothing, and you will know within an hour whether the platform suits you.
+  </p>
+</Article>

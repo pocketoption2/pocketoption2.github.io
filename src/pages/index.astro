@@ -1,0 +1,290 @@
+---
+import { Image } from "astro:assets";
+import Base from "../layouts/Base.astro";
+import Faq from "../components/Faq.astro";
+import EndCta from "../components/EndCta.astro";
+import PayGrid from "../components/PayGrid.astro";
+import desktop from "../assets/platform-desktop.webp";
+import mobile from "../assets/platform-mobile.webp";
+import { go } from "../data/site";
+import { HOME_FAQ, faqSchema } from "../data/faq";
+
+const title = "Pocket Option (PocketOption): Trading Platform, $5 Deposit & Free Demo";
+const description =
+  "Pocket Option, also written PocketOption, is a web trading platform with 100+ assets, a $5 minimum deposit and a free $50,000 demo account. Fees, app, payments and FAQ.";
+const features = [
+  ["Social trading", "Follow experienced traders and copy their positions automatically, with your own amount limits."],
+  ["Signals and indicators", "Built-in trading signals plus RSI, MACD, Bollinger Bands and more on every chart."],
+  ["Express trades", "Combine several forecasts into one trade for a higher potential payout, up to 218%."],
+  ["Pending trades", "Open a trade automatically at a chosen price or time instead of watching the chart."],
+  ["Tournaments", "Compete on a separate balance for prize pools, with free and paid entry options."],
+  ["Bonuses and cashback", "Promo codes, deposit bonuses and cashback offers that appear in your account over time."],
+];
+---
+
+<Base title={title} description={description} schema={[faqSchema(HOME_FAQ)]}>
+  <div class="w hg hero" slot="hero">
+    <div>
+      <h1>
+        Pocket Option: start trading with <b>just $5</b>
+      </h1>
+      <p class="lead">
+        PocketOption gives you currencies, crypto, stocks and commodities on one fast platform, with a free $50,000 demo
+        account. Fees, payouts, app and payments, explained before you sign up.
+      </p>
+      <div class="cta">
+        <a class="btn btn-p" href={go("register")} rel="sponsored nofollow">
+          Open a Pocket Option account
+        </a>
+        <a class="btn btn-g" href={go("demo")} rel="sponsored nofollow">
+          Try the free demo
+        </a>
+      </div>
+      <ul class="trust">
+        <li>Founded in 2017</li>
+        <li>10M+ registered users</li>
+        <li>170+ payment methods</li>
+      </ul>
+    </div>
+    <div class="dev">
+      <div class="lap">
+        <Image
+          src={desktop}
+          widths={[640, 960, 1280, 1600]}
+          sizes="(max-width: 1100px) 92vw, 760px"
+          alt="PocketOption web trading platform with EUR/USD chart"
+          loading="eager"
+          fetchpriority="high"
+        />
+      </div>
+      <div class="ph">
+        <Image
+          src={mobile}
+          widths={[220, 340]}
+          sizes="170px"
+          alt="Pocket Option mobile app trading screen"
+          loading="eager"
+        />
+      </div>
+    </div>
+  </div>
+
+  <div class="w stats">
+    <div>
+      <b>$5</b>
+      <span>Minimum deposit</span>
+    </div>
+    <div>
+      <b>$1</b>
+      <span>Minimum trade amount</span>
+    </div>
+    <div>
+      <b>$50,000</b>
+      <span>Virtual demo balance</span>
+    </div>
+    <div>
+      <b>218%</b>
+      <span>Maximum payout</span>
+    </div>
+  </div>
+
+  <section>
+    <div class="w two">
+      <div class="sh">
+        <span class="lbl">At a glance</span>
+        <h2>Pocket Option, the key facts</h2>
+        <p>
+          Checked against the platform itself. Conditions can change, so confirm them in your account before you
+          deposit. The <a href="/review/">full review</a> covers each point in detail.
+        </p>
+      </div>
+      <dl class="facts">
+        <dt>Founded</dt>
+        <dd>2017</dd>
+        <dt>Registered users</dt>
+        <dd>10 million+ worldwide</dd>
+        <dt>Platforms</dt>
+        <dd>Web, Android app, iOS web app, Telegram bot</dd>
+        <dt>Demo account</dt>
+        <dd>$50,000 virtual funds, no registration</dd>
+        <dt>Minimum deposit / trade</dt>
+        <dd>$5 / $1</dd>
+        <dt>Payment methods</dt>
+        <dd>Cards, bank transfer, e-wallets, mobile money, crypto</dd>
+        <dt>Trade types</dt>
+        <dd>Quick, digital, express, pending and copy trading</dd>
+        <dt>Assets</dt>
+        <dd>Forex, crypto, stocks, commodities, indices</dd>
+        <dt>Not available in</dt>
+        <dd>EEA, USA, UK, Israel, Japan, Philippines, Brazil</dd>
+      </dl>
+    </div>
+  </section>
+
+  <section class="alt">
+    <div class="w">
+      <div class="sh">
+        <span class="lbl">Getting started</span>
+        <h2>Open an account in three steps</h2>
+        <p>Registration takes about a minute. Stay on the demo as long as you like before adding real money.</p>
+      </div>
+      <ol class="steps">
+        <li>
+          <h3>Create your account</h3>
+          <p>Sign up with email or Google, then confirm your email to unlock deposits and withdrawals.</p>
+        </li>
+        <li>
+          <h3>Practise on the demo</h3>
+          <p>Switch to the $50,000 demo balance and test assets, timeframes and indicators risk-free.</p>
+        </li>
+        <li>
+          <h3>Fund and trade</h3>
+          <p>Deposit from $5 with a local payment method and open trades from $1 on web or mobile.</p>
+        </li>
+      </ol>
+      <p class="more">
+        <a href="/how-to-trade/">Read the step-by-step trading walkthrough →</a>
+      </p>
+    </div>
+  </section>
+
+  <section>
+    <div class="w">
+      <div class="sh">
+        <span class="lbl">Platform features</span>
+        <h2>More than a chart and two buttons</h2>
+        <p>Tools for learning, following other traders and getting more from each deposit.</p>
+      </div>
+      <div class="feat">
+        {features.map(([h, p]) => (
+          <div>
+            <h3>{h}</h3>
+            <p>{p}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <div class="w">
+    <div class="appc">
+      <div>
+        <span class="lbl">Pocket Option app</span>
+        <h2>Your account, on every screen</h2>
+        <p>
+          Same assets, same balance and same history on the Android app, the iPhone web app and any desktop browser.
+        </p>
+        <div class="stores">
+          <a href="/app/#android">
+            <i class="ic">
+              <img src="/logos/android.svg" alt="" width="20" height="20" />
+            </i>
+            <span>
+              <small>Get it on</small>Google Play
+            </span>
+          </a>
+          <a href="/app/#iphone">
+            <i class="ic ic-w">
+              <img src="/logos/apple.svg" alt="" width="20" height="20" />
+            </i>
+            <span>
+              <small>Install as</small>iPhone web app
+            </span>
+          </a>
+          <a href="/app/#desktop">
+            <i class="ic">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="#fff"
+                stroke-width="1.8"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <rect x="2.5" y="4" width="19" height="13" rx="2" />
+                <path d="M8 21h8M12 17v4" />
+              </svg>
+            </i>
+            <span>
+              <small>Open in</small>Desktop browser
+            </span>
+          </a>
+          <a href="/app/#telegram">
+            <i class="ic">
+              <img src="/logos/telegram.svg" alt="" width="20" height="20" />
+            </i>
+            <span>
+              <small>Trade via</small>Telegram bot
+            </span>
+          </a>
+        </div>
+      </div>
+      <div class="phone">
+        <Image src={mobile} widths={[300, 560]} sizes="290px" alt="PocketOption app chart with buy and sell buttons" />
+      </div>
+    </div>
+  </div>
+
+  <section>
+    <div class="w">
+      <div class="sh">
+        <span class="lbl">Deposits and withdrawals</span>
+        <h2>Local payment methods, no Pocket Option fees</h2>
+        <p>
+          Over 170 options, from cards to mobile money and crypto. Availability depends on your country.{" "}
+          <a href="/deposit-withdrawal/">How deposits and withdrawals work →</a>
+        </p>
+      </div>
+      <PayGrid />
+    </div>
+  </section>
+
+  <section class="alt">
+    <div class="w">
+      <div class="sh">
+        <span class="lbl">Our review</span>
+        <h2>Strengths and trade-offs</h2>
+        <p>No platform suits everyone. Weigh both sides before you open a real account.</p>
+      </div>
+      <div class="pc">
+        <div>
+          <h3>What works well</h3>
+          <ul>
+            <li>Low entry: $5 deposit, $1 trades</li>
+            <li>Unlimited demo with $50,000 virtual funds</li>
+            <li>Wide choice of local and crypto payment methods</li>
+            <li>Social trading and built-in signals</li>
+            <li>Clean, fast web platform</li>
+          </ul>
+        </div>
+        <div class="con">
+          <h3>What to keep in mind</h3>
+          <ul>
+            <li>Short-term trading carries a high risk of loss</li>
+            <li>Not available in the EEA, USA, UK and some other countries</li>
+            <li>Bonuses come with turnover requirements</li>
+            <li>Verification is required before withdrawals</li>
+            <li>Offshore broker, not a tier-1 regulator</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="w faq">
+      <div class="sh">
+        <span class="lbl">FAQ</span>
+        <h2>Questions traders ask about Pocket Option</h2>
+        <p>
+          Short answers to what people search most about Pocket Option and PocketOption.{" "}
+          <a href="/faq/">See all questions →</a>
+        </p>
+      </div>
+      <Faq items={HOME_FAQ} />
+    </div>
+  </section>
+
+  <EndCta />
+</Base>

@@ -1,0 +1,58 @@
+---
+import Logo from "./Logo.astro";
+import { FOOTER } from "../data/site";
+const year = new Date().getFullYear();
+---
+
+<footer class="site">
+  <div class="w">
+    <div class="ft">
+      <div>
+        <a class="logo" href="/">
+          <Logo size={26} />
+          Pocket Option
+        </a>
+        <p>
+          Pocket Option is a web trading platform for currencies, crypto, stocks and commodities, with a $5 minimum
+          deposit, $1 trades and a free $50,000 demo account.
+        </p>
+      </div>
+      {FOOTER.map((col) => (
+        <div>
+          <h2>{col.title}</h2>
+          <ul>
+            {col.links.map((l) => (
+              <li>
+                <a href={l.href}>{l.label}</a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+    <p class="risk">
+      Risk warning: trading financial instruments involves significant risk and may result in the loss of your invested
+      capital. Only trade with money you can afford to lose. This website is for information only and is not investment
+      advice. Some links are affiliate links; we may earn a commission at no extra cost to you.
+    </p>
+  </div>
+  <div class="copy">
+    <div class="w">
+      <span>© {year} pocketoption2.github.io. All rights reserved.</span>
+      <ul>
+        <li>
+          <a href="/privacy/">Privacy</a>
+        </li>
+        <li>
+          <a href="/disclaimer/">Disclaimer</a>
+        </li>
+        <li>
+          <a href="/risk-warning/">Risk warning</a>
+        </li>
+        <li>
+          <a href="/contact/">Contact</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</footer>

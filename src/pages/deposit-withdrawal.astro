@@ -1,0 +1,126 @@
+---
+import Article from "../layouts/Article.astro";
+import PayGrid from "../components/PayGrid.astro";
+const toc = [
+  { id: "methods", label: "Payment methods" },
+  { id: "deposit", label: "How to deposit" },
+  { id: "verify", label: "Verification" },
+  { id: "withdraw", label: "How to withdraw" },
+  { id: "times", label: "Fees and timing" },
+  { id: "problems", label: "If a payment is delayed" },
+];
+---
+
+<Article
+  title="Pocket Option Deposit & Withdrawal: Methods, Minimums, Times"
+  description="Pocket Option deposits start at $5 with 170+ payment methods. How to deposit, verify your account and withdraw from PocketOption, with fees and processing times."
+  h1="Pocket Option deposits and withdrawals"
+  lead="Deposits start at $5 and Pocket Option charges no commission either way. Here is how to fund your account, get verified and withdraw without delays."
+  crumb="Deposits & withdrawals"
+  toc={toc}
+>
+  <h2 id="methods">Payment methods</h2>
+  <p>
+    Pocket Option lists more than 170 payment methods. What you see in your account depends on your country and
+    currency.
+  </p>
+  <PayGrid />
+  <ul>
+    <li>
+      <strong>Cards:</strong> Visa, Mastercard and local card schemes.
+    </li>
+    <li>
+      <strong>E-wallets:</strong> Jeton, Volet, WebMoney, Apple Pay, Google Pay, Paytm, GrabPay and more.
+    </li>
+    <li>
+      <strong>Bank transfers and QR:</strong> UPI, QRIS, DuitNow, VietQR, PSE and other local rails.
+    </li>
+    <li>
+      <strong>Mobile money:</strong> M-Pesa, MTN, Airtel, Orange, Vodacom and others across Africa.
+    </li>
+    <li>
+      <strong>Crypto:</strong> Bitcoin, Ethereum, USDT on several networks, Litecoin, Tron, Solana and more.
+    </li>
+  </ul>
+
+  <h2 id="deposit">How to deposit</h2>
+  <ol>
+    <li>
+      Log in and open <strong>Finance → Deposit</strong>.
+    </li>
+    <li>Choose a payment method and enter the amount, from $5 for most methods.</li>
+    <li>
+      Add a promo code if you have one. Read its conditions first, see{" "}
+      <a href="/bonus-promo-code/">bonus and promo codes</a>.
+    </li>
+    <li>Confirm the payment with your provider. Most deposits are credited within minutes.</li>
+  </ol>
+
+  <h2 id="verify">Verification</h2>
+  <p>
+    Verification protects your account and is required before you can withdraw. Pocket Option asks for your personal
+    details, a photo ID and, in some cases, proof of address. Verifying right after registration saves time later.
+  </p>
+  <div class="note">
+    Use your real name and details from the start. A mismatch between your profile and your documents or payment method
+    is the most common reason for a delayed withdrawal.
+  </div>
+
+  <h2 id="withdraw">How to withdraw</h2>
+  <ol>
+    <li>
+      Open <strong>Finance → Withdrawal</strong>.
+    </li>
+    <li>Select a method you used to deposit. Anti-money-laundering rules require funds to return the same way.</li>
+    <li>Enter the amount and confirm.</li>
+  </ol>
+  <p>
+    Pocket Option sets no minimum or maximum withdrawal amount when you have no active deposit bonus. If a bonus is
+    still active, its amount is deducted from your balance when you withdraw.
+  </p>
+
+  <h2 id="times">Fees and timing</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Method</th>
+        <th>Deposit</th>
+        <th>Withdrawal arrival</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Crypto</td>
+        <td>Minutes, after network confirmations</td>
+        <td>Usually within a day</td>
+      </tr>
+      <tr>
+        <td>E-wallets</td>
+        <td>Instant to minutes</td>
+        <td>Usually within a day</td>
+      </tr>
+      <tr>
+        <td>Mobile money, local transfers</td>
+        <td>Instant to minutes</td>
+        <td>Same day to a few days</td>
+      </tr>
+      <tr>
+        <td>Bank cards</td>
+        <td>Instant</td>
+        <td>Several business days</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>
+    Pocket Option charges 0% on deposits and withdrawals. Your bank, card issuer or the blockchain network may still
+    charge their own fees or apply a currency conversion rate.
+  </p>
+
+  <h2 id="problems">If a payment is delayed</h2>
+  <ul>
+    <li>Check that your account is fully verified.</li>
+    <li>Make sure you are withdrawing to a method you used to deposit.</li>
+    <li>Check whether an active bonus is affecting your balance.</li>
+    <li>Contact Pocket Option support from your account with the transaction ID.</li>
+  </ul>
+</Article>

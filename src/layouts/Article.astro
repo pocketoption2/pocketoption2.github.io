@@ -1,0 +1,92 @@
+---
+import Base from "./Base.astro";
+import PageHero from "../components/PageHero.astro";
+import SideCard from "../components/SideCard.astro";
+import EndCta from "../components/EndCta.astro";
+import { SITE } from "../data/site";
+
+interface Props {
+  title: string;
+  description: string;
+  h1: string;
+  lead: string;
+  crumb: string;
+  toc?: { id: string; label: string }[];
+  schema?: object[];
+  updated?: string;
+  parent?: { href: string; label: string };
+  article?: boolean;
+  published?: string;
+}
+const {
+  title,
+  description,
+  h1,
+  lead,
+  crumb,
+  toc = [],
+  schema = [],
+  updated = SITE.updated,
+  parent,
+  article = false,
+  published,
+} = Astro.props;
+const url = new URL(Astro.url.pathname, SITE.url).href;
+const crumbs = [{ href: "/", label: "Home" }, ...(parent ? [parent] : []), { label: crumb }];
+const bc = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: crumbs.map((c, i) => ({
+    "@type": "ListItem",
+    position: i + 1,
+    name: c.label,
+    item: c.href ? new URL(c.href, SITE.url).href : url,
+  })),
+};
+const art = article
+  ? [
+      {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        headline: h1,
+        description,
+        mainEntityOfPage: url,
+        datePublished: published ?? updated,
+        dateModified: updated,
+        inLanguage: "en",
+        image: new URL("/og.png", SITE.url).href,
+        author: {
+          "@type": "Organization",
+          name: "Pocket Option editorial team",
+          url: new URL("/about/", SITE.url).href,
+        },
+        publisher: { "@id": `${SITE.url}/#website` },
+      },
+    ]
+  : [];
+---
+
+<Base title={title} description={description} schema={[bc, ...art, ...schema]} ogType={article ? "article" : "website"}>
+  <PageHero slot="hero" title={h1} lead={lead} crumbs={crumbs} updated={updated} />
+  <div class="w art">
+    <article class="prose">
+      <slot />
+    </article>
+    <aside class="aside">
+      {toc.length > 0 && (
+        <nav class="card toc" aria-label="On this page">
+          <h3>On this page</h3>
+          <ol>
+            {toc.map((t) => (
+              <li>
+                <a href={`#${t.id}`}>{t.label}</a>
+              </li>
+            ))}
+          </ol>
+        </nav>
+      )}
+      <SideCard />
+    </aside>
+  </div>
+  <EndCta />
+</Base>

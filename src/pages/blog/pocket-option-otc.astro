@@ -1,0 +1,78 @@
+---
+import Article from "../../layouts/Article.astro";
+const toc = [
+  { id: "what", label: "What OTC means" },
+  { id: "diff", label: "OTC vs regular markets" },
+  { id: "tips", label: "Trading OTC sensibly" },
+];
+---
+
+<Article
+  title="Pocket Option OTC: What It Is and How It Works"
+  description="What OTC assets are on Pocket Option, why PocketOption OTC markets are open on weekends, and how their prices and payouts differ from regular market assets."
+  h1="Pocket Option OTC assets explained"
+  lead="What OTC means on Pocket Option, why it is open on weekends and how its payouts and prices differ from regular markets."
+  crumb="Pocket Option OTC"
+  parent={{ href: "/blog/", label: "Blog" }}
+  toc={toc}
+  article
+  published="2026-11-19"
+  updated="2026-11-19"
+>
+  <h2 id="what">What OTC means</h2>
+  <p>
+    OTC stands for over-the-counter. On Pocket Option, assets marked <strong>OTC</strong>, such as EUR/USD OTC, are
+    priced by the broker and its liquidity providers rather than taken directly from an exchange or the interbank
+    market.
+  </p>
+  <p>
+    Because they do not depend on exchange hours, OTC assets stay open when regular markets are closed, including{" "}
+    <strong>weekends and holidays</strong>.
+  </p>
+
+  <h2 id="diff">OTC vs regular markets</h2>
+  <table>
+    <thead>
+      <tr>
+        <th></th>
+        <th>Regular asset</th>
+        <th>OTC asset</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Price source</td>
+        <td>Market quotes</td>
+        <td>Broker quotes</td>
+      </tr>
+      <tr>
+        <td>Hours</td>
+        <td>Market hours</td>
+        <td>24/7, including weekends</td>
+      </tr>
+      <tr>
+        <td>News impact</td>
+        <td>Reacts to economic news</td>
+        <td>May not follow real-world news</td>
+      </tr>
+      <tr>
+        <td>Payout</td>
+        <td>Varies</td>
+        <td>Varies, check before each trade</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2 id="tips">Trading OTC sensibly</h2>
+  <ul>
+    <li>Do not assume an OTC chart will follow the real market. Analyse the OTC chart itself.</li>
+    <li>Check the payout every time; it can change during the day.</li>
+    <li>Use the same risk rules as on regular assets: small, fixed amounts.</li>
+    <li>
+      Test any weekend strategy on the <a href="/demo-account/">demo</a> first.
+    </li>
+  </ul>
+  <p>
+    For the basics of placing a trade, see <a href="/how-to-trade/">how to trade on Pocket Option</a>.
+  </p>
+</Article>

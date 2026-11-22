@@ -1,0 +1,104 @@
+---
+import Article from "../../layouts/Article.astro";
+import { go } from "../../data/site";
+const toc = [
+  { id: "how", label: "How to log in" },
+  { id: "google", label: "Google sign-in accounts" },
+  { id: "password", label: "Forgot password" },
+  { id: "2fa", label: "Two-factor authentication" },
+  { id: "issues", label: "Other login problems" },
+];
+---
+
+<Article
+  title="Pocket Option Login: Sign In and Fix Common Problems"
+  description="How to log in to Pocket Option on web and mobile, reset your PocketOption password, use Google sign-in and 2FA, and fix the most common login errors."
+  h1="Pocket Option login: fix the most common problems"
+  lead="How to sign in on web and mobile, reset your password, and what to do when Google sign-in or two-factor authentication gets in the way."
+  crumb="Pocket Option login"
+  parent={{ href: "/blog/", label: "Blog" }}
+  toc={toc}
+  article
+  published="2026-11-21"
+  updated="2026-11-21"
+>
+  <h2 id="how">How to log in</h2>
+  <ol>
+    <li>
+      Go to pocketoption.com and press <strong>Log In</strong>.
+    </li>
+    <li>
+      Enter your email and password, or choose <strong>Google</strong> if you registered with it.
+    </li>
+    <li>Enter your 2FA code if you turned it on.</li>
+  </ol>
+  <p>
+    On Android, open the app and use the same details. On iPhone, open the web app from your home screen. See{" "}
+    <a href="/app/">Pocket Option app</a> for installation.
+  </p>
+
+  <h2 id="google">Google sign-in accounts</h2>
+  <p>
+    If you created your account with Google, it has no password yet. To log in with email and password instead, for
+    example on the Telegram bot or a new device, use <strong>Password recovery</strong> with your Google email to set
+    one first.
+  </p>
+
+  <h2 id="password">Forgot password</h2>
+  <ol>
+    <li>
+      On the login form, choose <strong>Password recovery</strong>.
+    </li>
+    <li>Enter your registration email.</li>
+    <li>
+      Open the link in the email and set a new password. Check your spam folder if it does not arrive within a few
+      minutes.
+    </li>
+  </ol>
+
+  <h2 id="2fa">Two-factor authentication</h2>
+  <p>
+    Turn on 2FA in your profile security settings. It adds a one-time code from an authenticator app or email at each
+    login. If you lose access to your authenticator, contact support from the login page and be ready to confirm your
+    identity.
+  </p>
+
+  <h2 id="issues">Other login problems</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Problem</th>
+        <th>Fix</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>"Wrong email or password"</td>
+        <td>Check for spaces and keyboard language, then reset the password.</td>
+      </tr>
+      <tr>
+        <td>Page will not load</td>
+        <td>Clear the browser cache, try another browser or switch networks.</td>
+      </tr>
+      <tr>
+        <td>Account blocked</td>
+        <td>Contact support; blocks usually relate to verification or terms.</td>
+      </tr>
+      <tr>
+        <td>Restricted country</td>
+        <td>Pocket Option does not serve the EEA, USA, UK, Israel, Japan, the Philippines or Brazil.</td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="note">
+    Only log in at pocketoption.com or the official app. Pages that copy the login form are a common way to steal
+    accounts.
+  </div>
+  <p>
+    New to Pocket Option?{" "}
+    <a href={go("register")} rel="sponsored nofollow">
+      Create an account
+    </a>{" "}
+    or start on the <a href="/demo-account/">demo</a>.
+  </p>
+</Article>

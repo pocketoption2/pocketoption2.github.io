@@ -1,0 +1,123 @@
+---
+import { Image } from "astro:assets";
+import Article from "../layouts/Article.astro";
+import desktop from "../assets/platform-desktop.webp";
+import { go } from "../data/site";
+const toc = [
+  { id: "screen", label: "The trading screen" },
+  { id: "first", label: "Your first trade" },
+  { id: "tools", label: "Indicators and signals" },
+  { id: "risk", label: "Money management" },
+  { id: "mistakes", label: "Common mistakes" },
+];
+---
+
+<Article
+  title="How to Trade on Pocket Option: Step-by-Step for Beginners"
+  description="A practical walkthrough of the Pocket Option trading screen: choosing an asset, setting time and amount, placing a trade, using indicators and managing risk on PocketOption."
+  h1="How to trade on Pocket Option"
+  lead="A practical walkthrough of the trading screen, your first trade and the habits that keep losses small. Follow along on the free demo."
+  crumb="How to trade"
+  toc={toc}
+>
+  <figure>
+    <Image
+      src={desktop}
+      widths={[740, 1480]}
+      sizes="(max-width: 1100px) 92vw, 740px"
+      alt="Pocket Option trading screen with chart, time, amount and Buy/Sell buttons"
+    />
+    <figcaption>
+      The Pocket Option web platform: asset selector top left, chart in the centre, trade panel on the right.
+    </figcaption>
+  </figure>
+
+  <h2 id="screen">The trading screen</h2>
+  <ul>
+    <li>
+      <strong>Asset selector</strong> (top left): pick a currency pair, crypto, stock, commodity or index. The payout
+      percentage is shown next to each asset.
+    </li>
+    <li>
+      <strong>Chart</strong> (centre): switch between candles, bars, line or area, and change the timeframe.
+    </li>
+    <li>
+      <strong>Trade panel</strong> (right): set the expiry time and the amount, then press <strong>Buy</strong> if you
+      expect the price to rise or <strong>Sell</strong> if you expect it to fall.
+    </li>
+    <li>
+      <strong>Trades</strong> (far right): open and closed positions with their results.
+    </li>
+  </ul>
+
+  <h2 id="first">Your first trade</h2>
+  <ol>
+    <li>
+      Open the{" "}
+      <a href={go("demo")} rel="sponsored nofollow">
+        demo account
+      </a>
+      .
+    </li>
+    <li>Choose a liquid asset such as EUR/USD.</li>
+    <li>Set the chart to 1-minute candles and the expiry to 5 minutes.</li>
+    <li>Set the amount to $1 to $5, the same as you would on a small real account.</li>
+    <li>Look at the trend over the last 30 to 60 candles. Press Buy or Sell only if the direction is clear.</li>
+    <li>
+      Wait for expiry. If your forecast is right, the stake plus the payout is added to your balance; if not, the stake
+      is lost.
+    </li>
+  </ol>
+
+  <h2 id="tools">Indicators and signals</h2>
+  <p>
+    Pocket Option includes the standard toolkit: moving averages, RSI, MACD, Bollinger Bands, Stochastic and more, plus
+    drawing tools for trend lines and levels. Built-in signals suggest a direction and timeframe based on technical
+    analysis.
+  </p>
+  <p>
+    Start with one trend tool (a moving average) and one momentum tool (RSI). Adding more indicators rarely improves
+    results and makes charts harder to read. Treat signals as a second opinion, not an instruction.
+  </p>
+
+  <h2 id="risk">Money management</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Rule</th>
+        <th>Why it matters</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Risk 1–2% of your balance per trade</td>
+        <td>A losing streak will not wipe out your account.</td>
+      </tr>
+      <tr>
+        <td>Set a daily loss limit</td>
+        <td>Stops emotional trading after bad results.</td>
+      </tr>
+      <tr>
+        <td>Trade fixed amounts</td>
+        <td>Avoids doubling up to win back losses.</td>
+      </tr>
+      <tr>
+        <td>Check the payout first</td>
+        <td>At 80% payout you need to win about 56% of trades to break even.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2 id="mistakes">Common mistakes</h2>
+  <ul>
+    <li>Moving to real money after a few lucky demo trades.</li>
+    <li>Using very short expiries (5–30 seconds), where results are close to random.</li>
+    <li>Martingale: doubling the stake after each loss.</li>
+    <li>Trading during major news without a plan.</li>
+    <li>Ignoring the payout percentage, especially on OTC assets.</li>
+  </ul>
+  <p>
+    Learn the platform first with the <a href="/demo-account/">demo account tips</a>, then read about{" "}
+    <a href="/deposit-withdrawal/">deposits and withdrawals</a> when you are ready.
+  </p>
+</Article>

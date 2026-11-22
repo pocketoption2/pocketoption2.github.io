@@ -1,0 +1,28 @@
+---
+interface Props {
+  title: string;
+  lead: string;
+  crumbs: { href?: string; label: string }[];
+  updated?: string;
+}
+const { title, lead, crumbs, updated } = Astro.props;
+const fmt = (d: string) => new Date(d).toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" });
+---
+
+<div class="w ph-hero">
+  <nav aria-label="Breadcrumb">
+    <ol class="crumbs">
+      {crumbs.map((c) => (
+        <li>{c.href ? <a href={c.href}>{c.label}</a> : <span aria-current="page">{c.label}</span>}</li>
+      ))}
+    </ol>
+  </nav>
+  <h1>{title}</h1>
+  <p class="lead">{lead}</p>
+  {updated && (
+    <p class="meta">
+      Updated <time datetime={updated}>{fmt(updated)}</time>
+    </p>
+  )}
+  <slot />
+</div>

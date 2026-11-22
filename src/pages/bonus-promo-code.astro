@@ -1,0 +1,103 @@
+---
+import Article from "../layouts/Article.astro";
+import { go } from "../data/site";
+const toc = [
+  { id: "types", label: "Types of bonuses" },
+  { id: "promo", label: "How promo codes work" },
+  { id: "rules", label: "Bonus rules to know" },
+  { id: "worth", label: "Is a bonus worth it?" },
+];
+---
+
+<Article
+  title="Pocket Option Promo Code & Bonus: How They Really Work"
+  description="Pocket Option promo codes, deposit bonuses, cashback, tournaments and achievements explained, including the turnover rules that apply before you can withdraw a PocketOption bonus."
+  h1="Pocket Option promo codes and bonuses"
+  lead="Deposit bonuses, cashback, tournaments and achievements can add value, but every bonus comes with conditions. Read these before you enter a code."
+  crumb="Bonus & promo codes"
+  toc={toc}
+>
+  <h2 id="types">Types of bonuses</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Bonus</th>
+        <th>What it does</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Deposit promo code</td>
+        <td>Adds a percentage on top of your deposit as bonus funds.</td>
+      </tr>
+      <tr>
+        <td>Cashback</td>
+        <td>Returns part of your losses over a period to your balance.</td>
+      </tr>
+      <tr>
+        <td>Risk-free trades</td>
+        <td>Refunds the stake of a set number of losing trades.</td>
+      </tr>
+      <tr>
+        <td>Tournaments</td>
+        <td>Separate balance with prize pools; some are free to enter.</td>
+      </tr>
+      <tr>
+        <td>Achievements</td>
+        <td>Experience levels that unlock extra perks as you trade.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>
+    Offers change often and differ by account. The <strong>Promo codes</strong> and <strong>Market</strong> sections of
+    your account show what is available to you right now.
+  </p>
+
+  <h2 id="promo">How promo codes work</h2>
+  <ol>
+    <li>
+      Open <strong>Finance → Deposit</strong> and choose a method.
+    </li>
+    <li>Enter the promo code in the field before confirming the payment.</li>
+    <li>
+      The bonus is credited with your deposit and its progress appears under <strong>Promo codes</strong>.
+    </li>
+  </ol>
+  <p>
+    You can also tick a bonus offer shown on the deposit screen instead of typing a code. Only one deposit bonus can be
+    active at a time.
+  </p>
+
+  <h2 id="rules">Bonus rules to know</h2>
+  <ul>
+    <li>
+      <strong>Turnover:</strong> a deposit bonus must be traded a set number of times before it can be withdrawn.
+    </li>
+    <li>
+      <strong>Withdrawing early:</strong> if you withdraw while the bonus is still active, the bonus amount is deducted
+      from your balance.
+    </li>
+    <li>
+      <strong>Expiry:</strong> unused codes and bonuses can expire.
+    </li>
+    <li>
+      <strong>Declining:</strong> you can always deposit without a bonus. Many traders prefer this for full flexibility.
+    </li>
+  </ul>
+  <div class="note">
+    Check the turnover multiplier shown with each offer. A higher bonus percentage usually comes with a higher turnover
+    requirement.
+  </div>
+
+  <h2 id="worth">Is a bonus worth it?</h2>
+  <p>
+    A bonus helps if you plan to trade actively for a while and are comfortable with the turnover rule. If you want the
+    option to withdraw at any time, deposit without one. Either way, practise first on the{" "}
+    <a href="/demo-account/">free demo</a>.
+  </p>
+  <p>
+    <a href={go("register")} rel="sponsored nofollow">
+      See the current offers in your Pocket Option account →
+    </a>
+  </p>
+</Article>

@@ -1,0 +1,106 @@
+---
+import Article from "../layouts/Article.astro";
+import { go } from "../data/site";
+const toc = [
+  { id: "what", label: "What you get" },
+  { id: "open", label: "How to open it" },
+  { id: "switch", label: "Demo vs real account" },
+  { id: "practice", label: "How to practise well" },
+];
+---
+
+<Article
+  title="Pocket Option Demo Account: $50,000 Free, No Registration"
+  description="How the Pocket Option demo account works: $50,000 in virtual funds, one-click access without sign-up, top-ups, switching to real money and how to practise properly."
+  h1="Pocket Option demo account"
+  lead="$50,000 in virtual money, the full platform and no registration. Here is how to get the most out of it before you risk a single dollar."
+  crumb="Demo account"
+  toc={toc}
+>
+  <h2 id="what">What you get</h2>
+  <p>
+    The Pocket Option demo is the real platform running on a virtual balance. Every asset, chart type, indicator and
+    trade type is available, so the skills you build carry straight over to a live account.
+  </p>
+  <ul>
+    <li>
+      <strong>$50,000</strong> in virtual funds
+    </li>
+    <li>No registration needed for the one-click version</li>
+    <li>Balance can be topped up again at any time</li>
+    <li>Works on web, Android and the iPhone web app</li>
+    <li>No time limit</li>
+  </ul>
+
+  <h2 id="open">How to open it</h2>
+  <ol>
+    <li>
+      Go to Pocket Option and choose <strong>Try demo in one click</strong>.
+    </li>
+    <li>The platform opens with the demo balance already loaded.</li>
+    <li>Optional: create an account so your demo history and settings are saved.</li>
+  </ol>
+  <p>
+    <a href={go("demo")} rel="sponsored nofollow">
+      Open the Pocket Option demo →
+    </a>
+  </p>
+
+  <h2 id="switch">Demo vs real account</h2>
+  <table>
+    <thead>
+      <tr>
+        <th></th>
+        <th>Demo</th>
+        <th>Real</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Balance</td>
+        <td>$50,000 virtual</td>
+        <td>From $5</td>
+      </tr>
+      <tr>
+        <td>Registration</td>
+        <td>Not required</td>
+        <td>Email or Google, then verification</td>
+      </tr>
+      <tr>
+        <td>Assets and tools</td>
+        <td>All</td>
+        <td>All</td>
+      </tr>
+      <tr>
+        <td>Bonuses, tournaments</td>
+        <td>No</td>
+        <td>Yes</td>
+      </tr>
+      <tr>
+        <td>Withdrawals</td>
+        <td>No</td>
+        <td>Yes</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>
+    Switching is done from the balance menu in the top right corner. Your demo stays available after you deposit, so you
+    can keep testing ideas without touching real funds.
+  </p>
+
+  <h2 id="practice">How to practise well</h2>
+  <p>
+    A $50,000 balance makes it tempting to place large trades. That habit is expensive on a real account. Treat the demo
+    as if it held the amount you actually plan to deposit.
+  </p>
+  <ul>
+    <li>Set a demo budget equal to your planned first deposit, for example $50.</li>
+    <li>Risk no more than 1 to 2% of that budget per trade.</li>
+    <li>Pick two or three assets and learn how they move at different times of day.</li>
+    <li>Keep a simple journal: asset, direction, timeframe, reason, result.</li>
+    <li>Move to real money only after a few weeks of consistent results.</li>
+  </ul>
+  <p>
+    Our <a href="/how-to-trade/">trading walkthrough</a> explains the platform screen by screen.
+  </p>
+</Article>

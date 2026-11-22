@@ -1,0 +1,29 @@
+---
+import { LINKS, type LinkKey } from "../../data/site";
+export function getStaticPaths() {
+  return Object.keys(LINKS).map((key) => ({ params: { key } }));
+}
+const url = LINKS[Astro.params.key as LinkKey];
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta http-equiv="refresh" content={`0;url=${url}`} />
+    <title>Redirecting…</title>
+    <script is:inline define:vars={{ url }}>
+      location.replace(url);
+    </script>
+  </head>
+  <body>
+    <p>
+      Redirecting to{" "}
+      <a href={url} rel="sponsored nofollow">
+        Pocket Option
+      </a>
+      …
+    </p>
+  </body>
+</html>

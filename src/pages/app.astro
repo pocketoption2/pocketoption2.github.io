@@ -1,0 +1,111 @@
+---
+import { Image } from "astro:assets";
+import Article from "../layouts/Article.astro";
+import mobile from "../assets/platform-mobile.webp";
+import { go } from "../data/site";
+const toc = [
+  { id: "android", label: "Android" },
+  { id: "iphone", label: "iPhone and iPad" },
+  { id: "desktop", label: "Windows and macOS" },
+  { id: "telegram", label: "Telegram bot" },
+  { id: "compare", label: "Which one to use" },
+];
+---
+
+<Article
+  title="Pocket Option App: Android, iPhone, PC and Telegram"
+  description="How to get the Pocket Option app on Android (Google Play or APK), iPhone and iPad (web app), Windows and macOS, plus the PocketOption Telegram bot."
+  h1="Pocket Option app for every device"
+  lead="One account, one balance, every screen. How to install Pocket Option on Android, iPhone, desktop and Telegram, and which version to choose."
+  crumb="App"
+  toc={toc}
+>
+  <figure>
+    <Image
+      src={mobile}
+      widths={[360, 640]}
+      sizes="(max-width: 640px) 92vw, 360px"
+      alt="Pocket Option app on a phone showing a EUR/USD chart"
+      style="max-width:360px"
+    />
+    <figcaption>The Pocket Option mobile platform with an EUR/USD chart and trade panel.</figcaption>
+  </figure>
+
+  <h2 id="android">Android</h2>
+  <p>
+    The Android app is available on <strong>Google Play</strong>. Where Google Play is not available, Pocket Option
+    offers an <strong>APK</strong> download from its website. The app supports every trade type, indicators, social
+    trading, deposits and withdrawals.
+  </p>
+  <ol>
+    <li>Open Google Play and search for Pocket Option, or download the APK from the official site.</li>
+    <li>For the APK, allow installs from your browser when Android asks.</li>
+    <li>Log in with your existing account or open the demo.</li>
+  </ol>
+
+  <h2 id="iphone">iPhone and iPad</h2>
+  <p>
+    On iOS, Pocket Option runs as a <strong>web app</strong>. It installs to the home screen and opens full screen like
+    a native app.
+  </p>
+  <ol>
+    <li>Open pocketoption.com in Safari.</li>
+    <li>
+      Tap the Share button, then <strong>Add to Home Screen</strong>.
+    </li>
+    <li>Launch Pocket Option from the new icon.</li>
+  </ol>
+
+  <h2 id="desktop">Windows and macOS</h2>
+  <p>
+    There is no separate download for desktop. The full platform runs in Chrome, Edge, Safari or Firefox, which keeps it
+    up to date automatically and makes it work on any operating system. In Chrome or Edge you can also install it as an
+    app from the address bar.
+  </p>
+
+  <h2 id="telegram">Telegram bot</h2>
+  <p>
+    Pocket Option also runs a Telegram bot linked to your account. It is useful for quick checks and notifications on
+    the go, while full charting is better on the app or web platform.
+  </p>
+
+  <h2 id="compare">Which one to use</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Version</th>
+        <th>Best for</th>
+        <th>Install</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Web platform</td>
+        <td>Analysis on a large screen</td>
+        <td>None</td>
+      </tr>
+      <tr>
+        <td>Android app</td>
+        <td>Trading on the go</td>
+        <td>Google Play or APK</td>
+      </tr>
+      <tr>
+        <td>iOS web app</td>
+        <td>iPhone and iPad users</td>
+        <td>Add to Home Screen</td>
+      </tr>
+      <tr>
+        <td>Telegram bot</td>
+        <td>Quick checks, alerts</td>
+        <td>Open in Telegram</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>
+    Not sure yet?{" "}
+    <a href={go("demo")} rel="sponsored nofollow">
+      Open the demo
+    </a>{" "}
+    on your phone and desktop and see which you prefer.
+  </p>
+</Article>

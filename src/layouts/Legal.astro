@@ -1,0 +1,16 @@
+---
+import Base from "./Base.astro";
+import PageHero from "../components/PageHero.astro";
+import { SITE } from "../data/site";
+const { title, description, h1, lead, crumb } = Astro.props;
+const crumbs = [{ href: "/", label: "Home" }, { label: crumb }];
+---
+
+<Base title={title} description={description}>
+  <PageHero slot="hero" title={h1} lead={lead} crumbs={crumbs} updated={SITE.updated} />
+  <div class="w">
+    <article class="prose" style="padding:80px 0 112px">
+      <slot />
+    </article>
+  </div>
+</Base>

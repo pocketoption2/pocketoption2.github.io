@@ -1,0 +1,83 @@
+---
+import Article from "../../layouts/Article.astro";
+import { go } from "../../data/site";
+const toc = [
+  { id: "min", label: "The minimum" },
+  { id: "budgets", label: "What each budget allows" },
+  { id: "tips", label: "Making a small account last" },
+];
+---
+
+<Article
+  title="Pocket Option Minimum Deposit: $5 Explained"
+  description="The Pocket Option minimum deposit is $5 and the minimum trade is $1. What a $5, $50 or $100 PocketOption deposit lets you do, and how to size your trades."
+  h1="Pocket Option minimum deposit: what $5 gets you"
+  lead="What you can realistically do with a $5, $50 or $100 deposit, and how to size your trades so a small account lasts."
+  crumb="Minimum deposit"
+  parent={{ href: "/blog/", label: "Blog" }}
+  toc={toc}
+  article
+  published="2026-11-17"
+  updated="2026-11-17"
+>
+  <h2 id="min">The minimum</h2>
+  <p>
+    The Pocket Option minimum deposit is <strong>$5</strong> for most payment methods, and the minimum trade is{" "}
+    <strong>$1</strong>. Some methods, especially certain crypto networks, can have a higher minimum; the deposit screen
+    shows the exact figure.
+  </p>
+
+  <h2 id="budgets">What each budget allows</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Deposit</th>
+        <th>Trade size at 2% risk</th>
+        <th>Realistic use</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>$5</td>
+        <td>$1 (20%)</td>
+        <td>Testing deposits, withdrawals and the real-money feel</td>
+      </tr>
+      <tr>
+        <td>$50</td>
+        <td>$1</td>
+        <td>Small but disciplined trading</td>
+      </tr>
+      <tr>
+        <td>$100</td>
+        <td>$2</td>
+        <td>Room for a proper risk plan</td>
+      </tr>
+      <tr>
+        <td>$500</td>
+        <td>$10</td>
+        <td>Flexible sizing across several assets</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>
+    With $5, each $1 trade is a fifth of your balance, so a short losing streak can empty the account. Treat a $5
+    deposit as a test of the platform and payment process rather than a trading budget.
+  </p>
+
+  <h2 id="tips">Making a small account last</h2>
+  <ul>
+    <li>
+      Practise on the <a href="/demo-account/">$50,000 demo</a> until your results are consistent.
+    </li>
+    <li>Keep every trade at the same small amount.</li>
+    <li>Stop for the day after three losses in a row.</li>
+    <li>Think twice before taking a bonus on a small deposit; turnover rules limit withdrawals.</li>
+  </ul>
+  <p>
+    More on payment options in <a href="/deposit-withdrawal/">deposits and withdrawals</a>. Ready to start?{" "}
+    <a href={go("register")} rel="sponsored nofollow">
+      Open an account from $5
+    </a>
+    .
+  </p>
+</Article>
