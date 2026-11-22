@@ -1427,3 +1427,23 @@ h1 {
     font-size: 13px;
   }
 }
+@media (min-width: 1101px) {
+  .hg {
+    gap: 88px;
+  }
+  .hero h1 {
+    font-size: 58px;
+  }
+  .hero .lead {
+    max-width: 460px;
+  }
+  .hero .trust {
+    gap: 8px 20px;
+    font-size: 13px;
+  }
+  .dev .ph {
+    left: 28px;
+    bottom: -48px;
+    width: 140px;
+  }
+}
