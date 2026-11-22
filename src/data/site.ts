@@ -5,10 +5,14 @@ export const SITE = {
   updated: "2026-11-23",
 };
 
-// Replace these with the affiliate URLs before going live.
+const AFFILIATE =
+  "https://u3.shortink.io/register?utm_campaign=65155&utm_source=affiliate&utm_medium=sr&a=bsNUQyo6TJ9wXJ&ac=lk";
+
+// Sign-up, login, demo and app all use the same affiliate link.
 export const LINKS = {
-  register: "https://pocketoption.com",
-  demo: "https://pocketoption.com",
+  register: AFFILIATE,
+  demo: AFFILIATE,
+  app: AFFILIATE,
 } as const;
 
 export type LinkKey = keyof typeof LINKS;
