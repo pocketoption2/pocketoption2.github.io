@@ -10,10 +10,11 @@ interface Props {
   schema?: object[];
   ogType?: string;
   noindex?: boolean;
+  ogImage?: string;
 }
-const { title, description, schema = [], ogType = "website", noindex = false } = Astro.props;
+const { title, description, schema = [], ogType = "website", noindex = false, ogImage = "/og.png" } = Astro.props;
 const canonical = new URL(Astro.url.pathname, SITE.url).href;
-const og = new URL("/og.png", SITE.url).href;
+const og = new URL(ogImage, SITE.url).href;
 const ld = [
   {
     "@context": "https://schema.org",

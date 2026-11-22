@@ -3,7 +3,9 @@ import Base from "./Base.astro";
 import PageHero from "../components/PageHero.astro";
 import SideCard from "../components/SideCard.astro";
 import EndCta from "../components/EndCta.astro";
+import { Image } from "astro:assets";
 import { SITE } from "../data/site";
+const covers = import.meta.glob<{ default: ImageMetadata }>("../assets/covers/*.png", { eager: true });
 
 interface Props {
   title: string;
@@ -17,6 +19,7 @@ interface Props {
   parent?: { href: string; label: string };
   article?: boolean;
   published?: string;
+  cover?: string;
 }
 const {
   title,
@@ -30,8 +33,11 @@ const {
   parent,
   article = false,
   published,
+  cover,
 } = Astro.props;
 const url = new URL(Astro.url.pathname, SITE.url).href;
+const coverImg = cover ? covers[`../assets/covers/${cover}.png`]?.default : undefined;
+const ogImage = cover ? `/og/${cover}.jpg` : "/og.png";
 const crumbs = [{ href: "/", label: "Home" }, ...(parent ? [parent] : []), { label: crumb }];
 const bc = {
   "@context": "https://schema.org",
@@ -54,7 +60,7 @@ const art = article
         datePublished: published ?? updated,
         dateModified: updated,
         inLanguage: "en",
-        image: new URL("/og.png", SITE.url).href,
+        image: new URL(ogImage, SITE.url).href,
         author: {
           "@type": "Organization",
           name: "Pocket Option editorial team",
@@ -66,10 +72,27 @@ const art = article
   : [];
 ---
 
-<Base title={title} description={description} schema={[bc, ...art, ...schema]} ogType={article ? "article" : "website"}>
+<Base
+  title={title}
+  description={description}
+  schema={[bc, ...art, ...schema]}
+  ogType={article ? "article" : "website"}
+  ogImage={ogImage}
+>
   <PageHero slot="hero" title={h1} lead={lead} crumbs={crumbs} updated={updated} />
   <div class="w art">
     <article class="prose">
+      {coverImg && (
+        <figure class="cover">
+          <Image
+            src={coverImg}
+            widths={[640, 960, 1200]}
+            sizes="(max-width: 1100px) 92vw, 740px"
+            alt={h1}
+            loading="eager"
+          />
+        </figure>
+      )}
       <slot />
     </article>
     <aside class="aside">

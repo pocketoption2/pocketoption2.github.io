@@ -1386,3 +1386,12 @@ h1 {
     display: none;
   }
 }
+.cover img {
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+  display: block;
+}
+.prose .cover + * {
+  margin-top: 32px;
+}

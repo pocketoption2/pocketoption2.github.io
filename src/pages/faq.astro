@@ -5,6 +5,8 @@ import Faq from "../components/Faq.astro";
 import EndCta from "../components/EndCta.astro";
 import { faqSchema, type QA } from "../data/faq";
 import { SITE } from "../data/site";
+import { Image } from "astro:assets";
+import faqCover from "../assets/covers/faq.png";
 
 const groups: { title: string; items: QA[] }[] = [
   {
@@ -102,6 +104,7 @@ const bc = {
 ---
 
 <Base
+  ogImage="/og/faq.jpg"
   title="Pocket Option FAQ: Account, Deposits, Withdrawals, App"
   description="Answers to the most asked questions about Pocket Option and PocketOption: legitimacy, countries, demo, verification, minimum deposit, fees, withdrawals, payouts and the app."
   schema={[faqSchema(all), bc]}
@@ -113,6 +116,17 @@ const bc = {
     crumbs={crumbs}
     updated={SITE.updated}
   />
+  <div class="w" style="padding-top:72px">
+    <figure class="cover" style="max-width:740px">
+      <Image
+        src={faqCover}
+        widths={[640, 960, 1200]}
+        sizes="(max-width: 800px) 92vw, 740px"
+        alt="Pocket Option FAQ"
+        loading="eager"
+      />
+    </figure>
+  </div>
   {groups.map((g, i) => (
     <section class={i % 2 ? "alt" : ""}>
       <div class="w faq">
