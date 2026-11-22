@@ -7,7 +7,7 @@ export const SITE = {
 
 export const VERIFY = {
   google: "fUL0FjmS-ZiG5MUbaLgeCC8EMfhO1KJXFtTL91vniP4",
-  bing: "",
+  bing: "3CA04D93E5BEE83F0FD74BED3310FC79",
 };
 
 const AFFILIATE =
