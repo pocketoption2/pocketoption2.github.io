@@ -1345,3 +1345,14 @@ footer.site {
     max-width: 520px;
   }
 }
+
+.logo {
+  font-weight: 400;
+  letter-spacing: -0.02em;
+}
+.wm {
+  font-weight: 400;
+}
+.wm b {
+  font-weight: 800;
+}
