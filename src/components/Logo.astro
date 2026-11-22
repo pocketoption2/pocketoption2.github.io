@@ -1,10 +1,9 @@
 ---
 const { size = 28 } = Astro.props;
+const w = Math.round((size * 392) / 262);
 ---
 
-<svg width={size} height={size} viewBox="0 0 28 28" aria-hidden="true">
-  <rect width="28" height="28" rx="8" fill="#1D5CFF" />
-  <rect x="7" y="13" width="3.2" height="8" rx="1.2" fill="#fff" />
-  <rect x="12.4" y="8" width="3.2" height="13" rx="1.2" fill="#0A1630" />
-  <rect x="17.8" y="11" width="3.2" height="10" rx="1.2" fill="#fff" />
+<svg width={w} height={size} viewBox="62 134 392 262" aria-hidden="true">
+  <path fill="#fff" d="M106 140H178A108 108 0 0 1 178 356H118L88 386C80 394 68 390 68 378V178C68 157 85 140 106 140Z" />
+  <path fill="#9AA6BD" d="M272 164.1A108 108 0 1 1 272 331.9A126 126 0 0 0 272 164.1Z" />
 </svg>
