@@ -5,6 +5,6 @@
     <mask id="cut"><rect width="512" height="512" fill="#fff"/><circle cx="178" cy="248" r="126" fill="#000"/></mask>
   </defs>
   <rect width="512" height="512" rx="120" fill="#fff"/>
-  <g transform="translate(258 263) scale(1.2) translate(-258 -263)"><path fill="url(#g1)" d="M106 140H178A108 108 0 0 1 178 356H118L88 386C80 394 68 390 68 378V178C68 157 85 140 106 140Z"/>
+  <g transform="translate(258 263) scale(1.06) translate(-258 -263)"><path fill="url(#g1)" d="M106 140H178A108 108 0 0 1 178 356H118L88 386C80 394 68 390 68 378V178C68 157 85 140 106 140Z"/>
   <circle cx="340" cy="248" r="108" fill="url(#g2)" mask="url(#cut)"/></g>
 </svg>
