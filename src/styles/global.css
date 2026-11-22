@@ -1356,3 +1356,13 @@ footer.site {
 .wm b {
   font-weight: 800;
 }
+h1 {
+  text-wrap: balance;
+}
+.trust {
+  gap: 10px 24px;
+}
+.dev .ph {
+  width: 150px;
+  bottom: -56px;
+}
