@@ -4,6 +4,7 @@ import Base from "../layouts/Base.astro";
 import Faq from "../components/Faq.astro";
 import EndCta from "../components/EndCta.astro";
 import PayGrid from "../components/PayGrid.astro";
+import Ico from "../components/Ico.astro";
 import desktop from "../assets/platform-desktop.webp";
 import mobile from "../assets/platform-mobile.webp";
 import { go } from "../data/site";
@@ -12,6 +13,18 @@ import { HOME_FAQ, faqSchema } from "../data/faq";
 const title = "Pocket Option: Trading Platform with $5 Deposit & Free Demo";
 const description =
   "Trade on Pocket Option with a $5 deposit, $1 trades and a free $50,000 demo. PocketOption fees, payouts, app and 170+ payment methods explained.";
+const kpis = [
+  ["founded", "2017", "Founded"],
+  ["users", "10M+", "Registered users"],
+  ["deposit", "$5 / $1", "Min. deposit / trade"],
+  ["demo", "$50,000", "Demo funds, no sign-up"],
+];
+const specs = [
+  ["platforms", "Platforms", ["Web", "Android app", "iOS web app", "Telegram bot"]],
+  ["payments", "Payment methods", ["Cards", "Bank transfer", "E-wallets", "Mobile money", "Crypto"]],
+  ["trades", "Trade types", ["Quick", "Digital", "Express", "Pending", "Copy trading"]],
+  ["assets", "Assets", ["Forex", "Crypto", "Stocks", "Commodities", "Indices"]],
+];
 const features = [
   [
     "social",
@@ -120,35 +133,49 @@ const features = [
   </div>
 
   <section>
-    <div class="w two">
-      <div class="sh">
-        <span class="lbl">At a glance</span>
-        <h2>Pocket Option, the key facts</h2>
+    <div class="w">
+      <div class="gb-h">
+        <div>
+          <span class="lbl">At a glance</span>
+          <h2>Pocket Option, the key facts</h2>
+        </div>
         <p>
           Checked against the platform itself. Conditions can change, so confirm them in your account before you
           deposit. The <a href="/review/">full review</a> covers each point in detail.
         </p>
       </div>
-      <dl class="facts">
-        <dt>Founded</dt>
-        <dd>2017</dd>
-        <dt>Registered users</dt>
-        <dd>10 million+ worldwide</dd>
-        <dt>Platforms</dt>
-        <dd>Web, Android app, iOS web app, Telegram bot</dd>
-        <dt>Demo account</dt>
-        <dd>$50,000 virtual funds, no registration</dd>
-        <dt>Minimum deposit / trade</dt>
-        <dd>$5 / $1</dd>
-        <dt>Payment methods</dt>
-        <dd>Cards, bank transfer, e-wallets, mobile money, crypto</dd>
-        <dt>Trade types</dt>
-        <dd>Quick, digital, express, pending and copy trading</dd>
-        <dt>Assets</dt>
-        <dd>Forex, crypto, stocks, commodities, indices</dd>
-        <dt>Not available in</dt>
-        <dd>EEA, USA, UK, Israel, Japan, Philippines, Brazil</dd>
+      <dl class="gb-k">
+        {kpis.map(([i, v, l]) => (
+          <div>
+            <span class="gb-i">
+              <Ico n={i} />
+            </span>
+            <dt>{l}</dt>
+            <dd>{v}</dd>
+          </div>
+        ))}
       </dl>
+      <div class="gb-s">
+        {specs.map(([i, t, list]) => (
+          <div class="gb-c">
+            <h3>
+              <Ico n={i as string} />
+              {t}
+            </h3>
+            <ul class="chips">
+              {(list as string[]).map((x) => (
+                <li>{x}</li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+      <p class="gb-x">
+        <Ico n="blocked" />
+        <span>
+          <strong>Not available in:</strong> EEA, USA, UK, Israel, Japan, Philippines and Brazil.
+        </span>
+      </p>
     </div>
   </section>
 
