@@ -9,5 +9,6 @@ def build(src, lang, pairs, dst):
         s = s.replace(a, b)
     for p in ["/review/", "/demo-account/", "/app/", "/deposit-withdrawal/", "/bonus-promo-code/", "/how-to-trade/", "/faq/"]:
         s = s.replace(f'href="{p}', f'href="/{lang}{p}')
+    s = s.replace("$50 000", "$50\u00a0000")
     open(dst, "w").write(s)
     if miss: print("MISSING", dst, *miss, sep="\n  ")

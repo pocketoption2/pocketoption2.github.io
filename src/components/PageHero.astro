@@ -12,7 +12,7 @@ const fmt = (d: string) => new Date(d).toLocaleDateString(LANGS[lang].date, { da
 ---
 
 <div class="w ph-hero">
-  <nav aria-label="Breadcrumb">
+  <nav aria-label={t(lang).aria.crumbs}>
     <ol class="crumbs">
       {crumbs.map((c) => (
         <li>{c.href ? <a href={c.href}>{c.label}</a> : <span aria-current="page">{c.label}</span>}</li>
