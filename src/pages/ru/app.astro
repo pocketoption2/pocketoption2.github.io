@@ -1,0 +1,123 @@
+---
+import { Image } from "astro:assets";
+import Article from "../../layouts/Article.astro";
+import mobile from "../../assets/platform-mobile.webp";
+import { go } from "../../data/site";
+const toc = [
+  { id: "android", label: "Android" },
+  { id: "iphone", label: "iPhone и iPad" },
+  { id: "desktop", label: "Windows и macOS" },
+  { id: "telegram", label: "Telegram-бот" },
+  { id: "compare", label: "Что выбрать" },
+];
+---
+
+<Article
+  cover="app"
+  title="Скачать приложение Pocket Option: Android, iOS, ПК и Telegram"
+  description="Скачайте приложение Pocket Option для Android, iPhone, Windows и macOS или торгуйте через Telegram-бот. Установка, APK и возможности приложения."
+  h1="Приложение Pocket Option для любого устройства"
+  lead="Один аккаунт, один баланс, любой экран. Как установить Pocket Option на Android, iPhone, компьютер и в Telegram и какую версию выбрать."
+  crumb="Приложение"
+  toc={toc}
+>
+  <figure>
+    <Image
+      src={mobile}
+      widths={[360, 640]}
+      sizes="(max-width: 640px) 92vw, 360px"
+      alt="Приложение Pocket Option на телефоне с графиком EUR/USD"
+      style="max-width:360px"
+    />
+    <figcaption>Мобильная платформа Pocket Option: график EUR/USD и панель сделок.</figcaption>
+  </figure>
+
+  <h2 id="android">Android</h2>
+  <p>
+    Приложение для Android есть в <strong>Google Play</strong>. Если Google Play недоступен, Pocket Option предлагает
+    скачать <strong>APK</strong> со своего сайта. В приложении доступны все типы сделок, индикаторы, копитрейдинг,
+    пополнение и вывод средств.
+  </p>
+  <ol>
+    <li>
+      <a href={go("android")} rel="sponsored nofollow">
+        Скачайте приложение Pocket Option
+      </a>{" "}
+      в Google Play или загрузите APK с официального сайта.
+    </li>
+    <li>Для APK разрешите установку из браузера, когда Android попросит.</li>
+    <li>Войдите в свой аккаунт или откройте демо-счёт.</li>
+  </ol>
+
+  <h2 id="iphone">iPhone и iPad</h2>
+  <p>
+    На iOS Pocket Option работает как <strong>веб-приложение</strong>: оно ставится на главный экран и открывается
+    на весь экран, как обычное приложение.
+  </p>
+  <ol>
+    <li>
+      Откройте{" "}
+      <a href={go("app")} rel="sponsored nofollow">
+        Pocket Option
+      </a>{" "}
+      в Safari.
+    </li>
+    <li>
+      Нажмите «Поделиться», затем <strong>«На экран „Домой“»</strong>.
+    </li>
+    <li>Запускайте Pocket Option с новой иконки.</li>
+  </ol>
+
+  <h2 id="desktop">Windows и macOS</h2>
+  <p>
+    Отдельной программы для компьютера нет — и она не нужна. Полная версия платформы работает в Chrome, Edge, Safari
+    или Firefox, всегда обновлена и запускается на любой ОС. В Chrome или Edge её можно установить как приложение прямо
+    из адресной строки.
+  </p>
+
+  <h2 id="telegram">Telegram-бот</h2>
+  <p>
+    У Pocket Option есть и Telegram-бот, привязанный к вашему аккаунту. Он удобен, чтобы быстро что-то проверить
+    и получать уведомления на ходу, а полноценный анализ графиков лучше делать в приложении или веб-версии.
+  </p>
+
+  <h2 id="compare">Что выбрать</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Версия</th>
+        <th>Для чего лучше</th>
+        <th>Установка</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Веб-платформа</td>
+        <td>Анализ на большом экране</td>
+        <td>Не нужна</td>
+      </tr>
+      <tr>
+        <td>Приложение для Android</td>
+        <td>Торговля на ходу</td>
+        <td>Google Play или APK</td>
+      </tr>
+      <tr>
+        <td>Веб-приложение iOS</td>
+        <td>Для iPhone и iPad</td>
+        <td>«На экран „Домой“»</td>
+      </tr>
+      <tr>
+        <td>Telegram-бот</td>
+        <td>Быстрые проверки, уведомления</td>
+        <td>Открыть в Telegram</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>
+    Ещё не решили?{" "}
+    <a href={go("demo")} rel="sponsored nofollow">
+      Откройте демо
+    </a>{" "}
+    на телефоне и компьютере и посмотрите, что удобнее.
+  </p>
+</Article>
