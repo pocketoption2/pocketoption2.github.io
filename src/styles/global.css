@@ -1216,7 +1216,7 @@ footer.site {
     margin: 0 0 0 48px;
   }
   .art {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     gap: 48px;
   }
   .aside {
@@ -1450,7 +1450,7 @@ footer.site {
     margin-top: 44px;
   }
   .aside {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
   }
   .ft {
     grid-template-columns: 1fr 1fr;
@@ -1482,7 +1482,7 @@ footer.site {
     display: none;
   }
   .aside {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     max-width: 520px;
   }
 }
@@ -1792,5 +1792,14 @@ h1 {
   }
   .hd .r .t {
     margin-right: 4px;
+  }
+}
+@media (max-width: 400px) {
+  .lng-b {
+    padding: 0 9px;
+  }
+  .lng-b span,
+  .lng-b .chev {
+    display: none;
   }
 }
