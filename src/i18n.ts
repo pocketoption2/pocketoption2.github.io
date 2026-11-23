@@ -2,6 +2,7 @@ export const LANGS = {
   en: { name: "English", short: "EN", hreflang: "en", html: "en", og: "en_US", date: "en-GB" },
   ru: { name: "Русский", short: "RU", hreflang: "ru", html: "ru", og: "ru_RU", date: "ru-RU" },
   ua: { name: "Українська", short: "UA", hreflang: "uk", html: "uk", og: "uk_UA", date: "uk-UA" },
+  fr: { name: "Français", short: "FR", hreflang: "fr", html: "fr", og: "fr_FR", date: "fr-FR" },
 } as const;
 export type Lang = keyof typeof LANGS;
 
@@ -19,10 +20,10 @@ export const TRANSLATED = [
 
 export const getLang = (url: URL): Lang => {
   const seg = url.pathname.split("/")[1];
-  return seg === "ru" || seg === "ua" ? seg : "en";
+  return seg === "ru" || seg === "ua" || seg === "fr" ? seg : "en";
 };
 
-export const basePath = (pathname: string) => pathname.replace(/^\/(ru|ua)(?=\/)/, "") || "/";
+export const basePath = (pathname: string) => pathname.replace(/^\/(ru|ua|fr)(?=\/)/, "") || "/";
 
 export const lp = (lang: Lang, path: string) =>
   lang === "en" || !TRANSLATED.includes(path) ? path : `/${lang}${path}`;
@@ -183,6 +184,58 @@ const STR = {
     },
     payNote:
       "А також Jeton, Volet, WebMoney, Tron, Solana, місцеві банківські перекази, мобільні платежі та ще 160+ способів — набір залежить від країни.",
+  },
+  fr: {
+    skip: "Aller au contenu",
+    home: "Accueil",
+    nav: ["Avis", "Démo", "Appli", "Dépôts", "Bonus", "FAQ"],
+    tryDemo: "Démo",
+    openAccount: "Ouvrir un compte",
+    openPo: "Ouvrir un compte Pocket Option",
+    tryFree: "Essayer la démo gratuite",
+    openMenu: "Ouvrir le menu",
+    closeMenu: "Fermer le menu",
+    drawerRisk: "Le trading comporte des risques. N’investissez que ce que vous pouvez vous permettre de perdre.",
+    language: "Langue",
+    aria: { main: "Menu principal", menu: "Menu", mobile: "Menu mobile", crumbs: "Fil d’Ariane" },
+    footAbout:
+      "Pocket Option est une plateforme de trading en ligne sur les devises, les cryptos, les actions et les matières premières : dépôt dès 5 $, trades dès 1 $ et compte démo gratuit de 50 000 $.",
+    footCols: ["Pocket Option", "Apprendre", "À propos"],
+    footLinks: {
+      "/review/": "Avis",
+      "/demo-account/": "Compte démo",
+      "/app/": "Application",
+      "/deposit-withdrawal/": "Dépôts et retraits",
+      "/how-to-trade/": "Comment trader",
+      "/bonus-promo-code/": "Bonus et codes promo",
+      "/blog/": "Blog (EN)",
+      "/faq/": "FAQ",
+      "/about/": "Qui sommes-nous (EN)",
+      "/contact/": "Contact (EN)",
+      "/disclaimer/": "Avertissement",
+      "/privacy/": "Confidentialité",
+      "/risk-warning/": "Avertissement sur les risques",
+    } as Record<string, string>,
+    risk: "Avertissement sur les risques : le trading d’instruments financiers comporte un risque élevé et peut entraîner la perte du capital investi. Ne tradez qu’avec de l’argent que vous pouvez vous permettre de perdre. Ce site est purement informatif et ne constitue pas un conseil en investissement. Certains liens sont des liens d’affiliation : nous pouvons percevoir une commission, sans frais supplémentaires pour vous.",
+    rights: "Tous droits réservés.",
+    endTitle: "Testez Pocket Option sans risque sur la démo",
+    endNowrap: "sans risque",
+    endText: "Entraînez-vous avec 50 000 $ virtuels et prenez en main la plateforme avant de trader avec de l’argent réel.",
+    updated: "Mis à jour le",
+    toc: "Sommaire",
+    side: {
+      title: "Pocket Option en bref",
+      rows: [
+        ["Dépôt minimum", "5 $"],
+        ["Trade minimum", "1 $"],
+        ["Solde démo", "50 000 $"],
+        ["Actifs", "100+"],
+        ["Création", "2017"],
+      ],
+      open: "Ouvrir un compte",
+    },
+    payNote:
+      "Mais aussi Jeton, Volet, WebMoney, Tron, Solana, virements bancaires locaux, mobile money et plus de 160 autres méthodes, selon votre pays.",
   },
 };
 

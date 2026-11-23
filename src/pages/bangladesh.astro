@@ -1,0 +1,93 @@
+---
+import Article from "../layouts/Article.astro";
+import { go } from "../data/site";
+const toc = [
+  { id: "available", label: "Availability" },
+  { id: "signup", label: "Sign up and log in" },
+  { id: "payments", label: "Payment methods" },
+  { id: "withdraw", label: "Withdrawals" },
+  { id: "legal", label: "Rules and risks" },
+  { id: "faq", label: "FAQ" },
+];
+const schema = [{ "@context": "https://schema.org", "@type": "FAQPage", mainEntity: [{"@type": "Question", "name": "Can I deposit with bKash on Pocket Option?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. bKash and Nagad are listed as e-payment methods with 0% Pocket Option commission. The minimum deposit is $5 for most methods."}}, {"@type": "Question", "name": "Is Pocket Option legal in Bangladesh?", "acceptedAnswer": {"@type": "Answer", "text": "Pocket Option is an offshore broker. Bangladesh Bank restricts sending funds abroad for online trading, so check the rules before you deposit."}}, {"@type": "Question", "name": "How do I withdraw to bKash or Nagad?", "acceptedAnswer": {"@type": "Answer", "text": "Verify your account, then request a withdrawal to the same wallet you used to deposit."}}, {"@type": "Question", "name": "Is there a Bangla version?", "acceptedAnswer": {"@type": "Answer", "text": "The Pocket Option platform supports more than 40 languages. You can change the language in your profile settings."}}] }];
+---
+
+<Article
+  cover="deposit-withdrawal"
+  title="Pocket Option Bangladesh: Deposit with bKash & Nagad"
+  description="Pocket Option in Bangladesh: sign up and log in, deposit from $5 with bKash or Nagad, withdraw, use the app, and the legal risks to check first."
+  h1="Pocket Option in Bangladesh"
+  lead="bKash and Nagad deposits, account verification and withdrawals on Pocket Option for traders in Bangladesh, and why to read the legal section first."
+  crumb="Bangladesh"
+  toc={toc}
+  schema={schema}
+>
+  <h2 id="available">Is Pocket Option available in Bangladesh?</h2>
+  <p>Bangladesh is not on Pocket Option's list of restricted countries, and bKash and Nagad appear as deposit options. Account currency can be US dollars; local payments are converted from BDT (Bangladeshi taka) at checkout.</p>
+
+  <h2 id="signup">Sign up and log in</h2>
+  <ol>
+    <li>Open Pocket Option and register with your email or Google account.</li>
+    <li>Confirm your email, then try the <a href="/demo-account/">free $50,000 demo</a> before depositing.</li>
+    <li>Complete verification in your profile with an ID that matches your name. It is required before your first withdrawal.</li>
+  </ol>
+  <p>Pocket Option works on the Android app and in any mobile browser. Use the official website or Google Play only; fake APKs and Telegram "signal" groups are common scams. See the <a href="/app/">app guide</a> for install steps.</p>
+  <p>
+    <a href={go("register")} rel="sponsored nofollow">Open a Pocket Option account →</a>
+  </p>
+
+  <h2 id="payments">Payment methods in Bangladesh</h2>
+  <p>These local methods are listed on Pocket Option's official payment page, all with 0% Pocket Option commission. The minimum deposit is $5 for most methods. What you see at checkout can vary by account.</p>
+  <table>
+    <thead>
+      <tr>
+        <th>Method</th>
+        <th>Type</th>
+        <th>How it works</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>bKash</td>
+        <td>E-wallet</td>
+        <td>Pay from your bKash mobile wallet.</td>
+      </tr>
+      <tr>
+        <td>Nagad</td>
+        <td>E-wallet</td>
+        <td>Pay from your Nagad mobile wallet.</td>
+      </tr>
+      <tr>
+        <td>Crypto</td>
+        <td>Crypto</td>
+        <td>USDT (TRC-20, BEP20), Bitcoin and other coins are available worldwide.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>Cards, crypto such as USDT and Bitcoin, and e-wallets like Jeton and Volet are also available worldwide.</p>
+  <h3>Deposit tips</h3>
+  <ul>
+    <li>Use a bKash or Nagad account registered with your own NID and name, matching your Pocket Option profile.</li>
+    <li>Do not share your PIN or OTP with anyone, including people offering "agent" deposits.</li>
+    <li>Save the transaction ID from the bKash or Nagad receipt.</li>
+  </ul>
+
+  <h2 id="withdraw">Withdrawals</h2>
+  <p>Open <strong>Finance → Withdrawal</strong> after your account is verified. Anti-money-laundering rules require funds to go back to a method you used to deposit. Pocket Option sets no minimum withdrawal when no deposit bonus is active. Full details are on the <a href="/deposit-withdrawal/">deposits and withdrawals page</a>.</p>
+
+  <h2 id="legal">Rules and risks in Bangladesh</h2>
+  <p>Bangladesh has strict foreign exchange controls. Bangladesh Bank has warned that sending money abroad for online forex or crypto trading without permission may break the Foreign Exchange Regulation Act. Understand these rules, and the risk to your bKash or Nagad account, before you deposit.</p>
+  <p>Short-term trading carries a high risk of loss. Only trade money you can afford to lose, and read our <a href="/review/">Pocket Option review</a> before opening a real account.</p>
+
+  <h2 id="faq">Pocket Option Bangladesh FAQ</h2>
+  <h3>Can I deposit with bKash on Pocket Option?</h3>
+  <p>Yes. bKash and Nagad are listed as e-payment methods with 0% Pocket Option commission. The minimum deposit is $5 for most methods.</p>
+  <h3>Is Pocket Option legal in Bangladesh?</h3>
+  <p>Pocket Option is an offshore broker. Bangladesh Bank restricts sending funds abroad for online trading, so check the rules before you deposit.</p>
+  <h3>How do I withdraw to bKash or Nagad?</h3>
+  <p>Verify your account, then request a withdrawal to the same wallet you used to deposit.</p>
+  <h3>Is there a Bangla version?</h3>
+  <p>The Pocket Option platform supports more than 40 languages. You can change the language in your profile settings.</p>
+
+  <p>Other countries: <a href="/india/">Pocket Option India</a> · <a href="/pakistan/">Pocket Option Pakistan</a> · <a href="/nigeria/">Pocket Option Nigeria</a></p>
+</Article>

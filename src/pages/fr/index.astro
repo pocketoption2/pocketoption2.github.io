@@ -1,0 +1,349 @@
+---
+import { Image } from "astro:assets";
+import Base from "../../layouts/Base.astro";
+import Faq from "../../components/Faq.astro";
+import EndCta from "../../components/EndCta.astro";
+import PayGrid from "../../components/PayGrid.astro";
+import Ico from "../../components/Ico.astro";
+import desktop from "../../assets/platform-desktop.webp";
+import mobile from "../../assets/platform-mobile.webp";
+import { go } from "../../data/site";
+import { HOME_FAQ_FR, faqSchema } from "../../data/faq";
+
+const title = "Pocket Option : plateforme de trading, dépôt dès 5 $ et démo gratuite";
+const description =
+  "Tradez sur Pocket Option avec un dépôt de 5 $, des trades dès 1 $ et une démo gratuite de 50 000 $. Frais, gains, appli et 170+ moyens de paiement PocketOption.";
+const kpis = [
+  ["founded", "2017", "Création"],
+  ["users", "10 M+", "Utilisateurs inscrits"],
+  ["deposit", "5 $ / 1 $", "Dépôt / trade min."],
+  ["demo", "50 000 $", "En démo, sans inscription"],
+];
+const specs = [
+  ["platforms", "Plateformes", ["Web", "Appli Android", "Web app iOS", "Bot Telegram"]],
+  ["payments", "Moyens de paiement", ["Cartes", "Virement", "E-wallets", "Mobile money", "Crypto"]],
+  ["trades", "Types de trades", ["Rapides", "Digital", "Express", "En attente", "Copy trading"]],
+  ["assets", "Actifs", ["Forex", "Crypto", "Actions", "Matières premières", "Indices"]],
+];
+const features = [
+  [
+    "social",
+    "Trading social",
+    "Suivez des traders expérimentés et copiez leurs positions automatiquement, avec vos propres limites de montant.",
+  ],
+  [
+    "signals",
+    "Signaux et indicateurs",
+    "Signaux de trading intégrés, plus RSI, MACD, bandes de Bollinger et bien d’autres sur chaque graphique.",
+  ],
+  ["express", "Trades express", "Combinez plusieurs prévisions en un seul trade pour viser un gain plus élevé, jusqu’à 218 %."],
+  ["pending", "Trades en attente", "Le trade s’ouvre tout seul au prix ou à l’heure choisis : inutile de rester devant le graphique."],
+  ["tournaments", "Tournois", "Affrontez d’autres traders sur un solde séparé pour des cagnottes, avec des tournois gratuits et payants."],
+  [
+    "bonus",
+    "Bonus et cashback",
+    "Codes promo, bonus de dépôt et offres de cashback qui apparaissent régulièrement dans votre compte.",
+  ],
+];
+---
+
+<Base title={title} description={description} schema={[faqSchema(HOME_FAQ_FR)]}>
+  <div class="w hg hero" slot="hero">
+    <div>
+      <h1>
+        Pocket Option : commencez à trader <b>dès 5 $</b>
+      </h1>
+      <p class="lead">
+        Devises, cryptos, actions et matières premières sur une seule plateforme rapide, avec un compte démo gratuit de
+        50 000 $. Frais, gains, appli et paiements expliqués avant de vous inscrire.
+      </p>
+      <div class="cta">
+        <a class="btn btn-p" href={go("register")} rel="sponsored nofollow">
+          Ouvrir un compte Pocket Option
+        </a>
+        <a class="btn btn-g" href={go("demo")} rel="sponsored nofollow">
+          Essayer la démo gratuite
+        </a>
+      </div>
+      <ul class="trust">
+        <li>
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <rect x="3" y="4.5" width="18" height="16" rx="2.5" />
+            <path d="M3 9.5h18M8 2.5v4M16 2.5v4" />
+          </svg>
+          Depuis 2017
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="9" cy="8" r="3.5" />
+            <path d="M2.5 20c0-3.6 2.9-6 6.5-6s6.5 2.4 6.5 6" />
+            <path d="M16 4.6a3.5 3.5 0 0 1 0 6.8M18 14.3c2.1.7 3.5 2.8 3.5 5.7" />
+          </svg>
+          10 M+ d’inscrits
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <rect x="2.5" y="5" width="19" height="14" rx="2.5" />
+            <path d="M2.5 10h19M6.5 15h4" />
+          </svg>
+          170+ moyens de paiement
+        </li>
+      </ul>
+    </div>
+    <div class="dev">
+      <div class="lap">
+        <Image
+          src={desktop}
+          widths={[640, 960, 1280, 1600]}
+          sizes="(max-width: 1100px) 92vw, 760px"
+          alt="Plateforme de trading web PocketOption avec un graphique EUR/USD"
+          loading="eager"
+          fetchpriority="high"
+        />
+      </div>
+      <div class="ph">
+        <Image
+          src={mobile}
+          widths={[220, 340]}
+          sizes="170px"
+          alt="Écran de trading de l’application mobile Pocket Option"
+          loading="eager"
+        />
+      </div>
+    </div>
+  </div>
+
+  <div class="w stats">
+    <div>
+      <b>5 $</b>
+      <span>Dépôt minimum</span>
+    </div>
+    <div>
+      <b>1 $</b>
+      <span>Montant minimum par trade</span>
+    </div>
+    <div>
+      <b>50 000 $</b>
+      <span>Solde démo virtuel</span>
+    </div>
+    <div>
+      <b>218%</b>
+      <span>Gain maximum</span>
+    </div>
+  </div>
+
+  <section>
+    <div class="w">
+      <div class="gb-h">
+        <div>
+          <span class="lbl">En bref</span>
+          <h2>Pocket Option : l’essentiel</h2>
+        </div>
+        <p>
+          Vérifié directement sur la plateforme. Les conditions peuvent changer : confirmez-les dans votre compte avant de
+          déposer. L’<a href="/fr/review/">avis complet</a> détaille chaque point.
+        </p>
+      </div>
+      <dl class="gb-k">
+        {kpis.map(([i, v, l]) => (
+          <div>
+            <span class="gb-i">
+              <Ico n={i} />
+            </span>
+            <dt>{l}</dt>
+            <dd>{v}</dd>
+          </div>
+        ))}
+      </dl>
+      <div class="gb-s">
+        {specs.map(([i, t, list]) => (
+          <div class="gb-c">
+            <h3>
+              <Ico n={i as string} />
+              {t}
+            </h3>
+            <ul class="chips">
+              {(list as string[]).map((x) => (
+                <li>{x}</li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+      <p class="gb-x">
+        <Ico n="blocked" />
+        <span>
+          <strong>Non disponible :</strong> EEE, États-Unis, Royaume-Uni, Israël, Japon, Philippines et Brésil.
+        </span>
+      </p>
+    </div>
+  </section>
+
+  <section class="alt">
+    <div class="w">
+      <div class="sh">
+        <span class="lbl">Premiers pas</span>
+        <h2>Ouvrir un compte en trois étapes</h2>
+        <p>L’inscription prend environ une minute. Restez sur la démo aussi longtemps que vous voulez avant de déposer de l’argent réel.</p>
+      </div>
+      <ol class="steps">
+        <li>
+          <h3>Créez votre compte</h3>
+          <p>Inscrivez-vous par e-mail ou avec Google, puis confirmez votre e-mail pour débloquer les dépôts et les retraits.</p>
+        </li>
+        <li>
+          <h3>Entraînez-vous en démo</h3>
+          <p>Passez sur le solde démo de 50 000 $ et testez actifs, unités de temps et indicateurs sans risque.</p>
+        </li>
+        <li>
+          <h3>Déposez et tradez</h3>
+          <p>Déposez dès 5 $ avec un moyen de paiement local et ouvrez des trades dès 1 $ sur le web ou sur mobile.</p>
+        </li>
+      </ol>
+      <p class="more">
+        <a href="/fr/how-to-trade/">Le guide de trading pas à pas →</a>
+      </p>
+    </div>
+  </section>
+
+  <section>
+    <div class="w">
+      <div class="sh">
+        <span class="lbl">Fonctionnalités</span>
+        <h2>Bien plus qu’un graphique et deux boutons</h2>
+        <p>Des outils pour apprendre, suivre d’autres traders et tirer le meilleur de chaque dépôt.</p>
+      </div>
+      <div class="feat">
+        {features.map(([i, h, p]) => (
+          <div>
+            <img class="fi" src={`/icons/feat-${i}.svg`} width="88" height="88" alt="" loading="lazy" />
+            <h3>{h}</h3>
+            <p>{p}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <div class="w">
+    <div class="appc">
+      <div>
+        <span class="lbl">Appli Pocket Option</span>
+        <h2>Votre compte, sur tous vos écrans</h2>
+        <p>
+          Mêmes actifs, même solde et même historique sur l’appli Android, la web app iPhone et n’importe quel navigateur sur ordinateur.
+        </p>
+        <div class="stores">
+          <a href={go("android")} rel="sponsored nofollow">
+            <i class="ic">
+              <img src="/logos/android.svg" alt="" width="20" height="20" />
+            </i>
+            <span>
+              <small>Disponible sur</small>Google Play
+            </span>
+          </a>
+          <a href={go("app")} rel="sponsored nofollow">
+            <i class="ic ic-w">
+              <img src="/logos/apple.svg" alt="" width="20" height="20" />
+            </i>
+            <span>
+              <small>Installer en</small>web app iPhone
+            </span>
+          </a>
+          <a href={go("app")} rel="sponsored nofollow">
+            <i class="ic">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="#fff"
+                stroke-width="1.8"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <rect x="2.5" y="4" width="19" height="13" rx="2" />
+                <path d="M8 21h8M12 17v4" />
+              </svg>
+            </i>
+            <span>
+              <small>Ouvrir dans le</small>navigateur
+            </span>
+          </a>
+          <a href={go("app")} rel="sponsored nofollow">
+            <i class="ic">
+              <img src="/logos/telegram.svg" alt="" width="20" height="20" />
+            </i>
+            <span>
+              <small>Trader via le</small>bot Telegram
+            </span>
+          </a>
+        </div>
+      </div>
+      <div class="phone">
+        <Image src={mobile} widths={[300, 560]} sizes="290px" alt="Graphique de l’appli PocketOption avec les boutons d’achat et de vente" />
+      </div>
+    </div>
+  </div>
+
+  <section>
+    <div class="w">
+      <div class="sh">
+        <span class="lbl">Dépôts et retraits</span>
+        <h2>Paiements locaux, sans frais Pocket Option</h2>
+        <p>
+          Plus de 170 options, des cartes au mobile money en passant par la crypto. La disponibilité dépend de votre pays.{" "}
+          <a href="/fr/deposit-withdrawal/">Comment fonctionnent les dépôts et retraits →</a>
+        </p>
+      </div>
+      <PayGrid />
+    </div>
+  </section>
+
+  <section class="alt">
+    <div class="w">
+      <div class="sh">
+        <span class="lbl">Notre avis</span>
+        <h2>Points forts et limites</h2>
+        <p>Aucune plateforme ne convient à tout le monde. Pesez le pour et le contre avant d’ouvrir un compte réel.</p>
+      </div>
+      <div class="pc">
+        <div>
+          <h3>Ce qui fonctionne bien</h3>
+          <ul>
+            <li>Accès facile : dépôt de 5 $, trades dès 1 $</li>
+            <li>Démo illimitée avec 50 000 $ virtuels</li>
+            <li>Large choix de paiements locaux et crypto</li>
+            <li>Trading social et signaux intégrés</li>
+            <li>Plateforme web claire et rapide</li>
+          </ul>
+        </div>
+        <div class="con">
+          <h3>À garder en tête</h3>
+          <ul>
+            <li>Le trading à court terme comporte un risque élevé de perte</li>
+            <li>Non disponible dans l’EEE, aux États-Unis, au Royaume-Uni et dans quelques autres pays</li>
+            <li>Les bonus sont soumis à des conditions de volume</li>
+            <li>Vérification obligatoire avant tout retrait</li>
+            <li>Courtier offshore, sans régulateur de premier rang</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="w faq">
+      <div class="sh">
+        <span class="lbl">FAQ</span>
+        <h2>Les questions des traders sur Pocket Option</h2>
+        <p>
+          Des réponses courtes aux questions les plus recherchées sur Pocket Option et PocketOption.{" "}
+          <a href="/fr/faq/">Toutes les questions →</a>
+        </p>
+      </div>
+      <Faq items={HOME_FAQ_FR} />
+    </div>
+  </section>
+
+  <EndCta />
+</Base>

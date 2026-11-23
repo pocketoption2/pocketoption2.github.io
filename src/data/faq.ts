@@ -81,6 +81,33 @@ export const HOME_FAQ_UA: QA[] = [
   },
 ];
 
+export const HOME_FAQ_FR: QA[] = [
+  {
+    q: "Pocket Option est-il fiable ou une arnaque ?",
+    a: 'Pocket Option existe depuis 2017 et annonce plus de 10 millions d’inscrits. C’est un courtier offshore : vérifiez qu’il est accessible dans votre pays et commencez par le compte démo. Plus de détails dans notre <a href="/fr/review/">avis sur Pocket Option</a>.',
+  },
+  {
+    q: "PocketOption et Pocket Option, c’est la même chose ?",
+    a: "Oui. PocketOption est simplement l’écriture en un mot de Pocket Option. C’est le même courtier et la même plateforme, sur pocketoption.com.",
+  },
+  {
+    q: "Quel est le dépôt minimum sur Pocket Option ?",
+    a: 'Le dépôt minimum est de 5 $ pour la plupart des moyens de paiement, et le trade minimum de 1 $. Plus d’infos sur la page <a href="/fr/deposit-withdrawal/">dépôts et retraits</a>.',
+  },
+  {
+    q: "Pocket Option a-t-il un compte démo ?",
+    a: 'Oui. Le <a href="/fr/demo-account/">compte démo</a> avec 50 000 $ virtuels s’ouvre en un clic, sans inscription.',
+  },
+  {
+    q: "Existe-t-il une appli Pocket Option ?",
+    a: 'Oui. Une appli Android sur Google Play ou en APK, une web app pour iPhone et iPad, un bot Telegram et la plateforme complète dans n’importe quel navigateur sur ordinateur. Voir la <a href="/fr/app/">page de l’appli</a>.',
+  },
+  {
+    q: "Combien de temps prend un retrait ?",
+    a: "Après vérification, les retraits vers e-wallets et en crypto arrivent souvent en moins de 24 h. Par carte ou virement bancaire, comptez jusqu’à plusieurs jours ouvrés selon le prestataire.",
+  },
+];
+
 export const faqSchema = (items: QA[]) => ({
   "@context": "https://schema.org",
   "@type": "FAQPage",

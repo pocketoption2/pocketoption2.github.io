@@ -1,0 +1,43 @@
+FR = [
+ '"iPhone et iPad" }',
+ '"Windows et macOS" }',
+ '"Bot Telegram" }',
+ '"Quelle version choisir" }',
+ 'title="Télécharger l’appli Pocket Option : Android, iOS, PC et Telegram"',
+ 'description="Téléchargez l’appli Pocket Option pour Android, iPhone, Windows et macOS, ou utilisez le bot Telegram PocketOption. Installation, APK et fonctionnalités."',
+ 'h1="L’appli Pocket Option sur tous vos appareils"',
+ 'lead="Un compte, un solde, tous les écrans. Comment installer Pocket Option sur Android, iPhone, ordinateur et Telegram, et quelle version choisir."',
+ 'crumb="Appli"',
+ 'alt="Appli Pocket Option sur un téléphone avec un graphique EUR/USD"',
+ '<figcaption>La plateforme mobile Pocket Option avec un graphique EUR/USD et le panneau de trading.</figcaption>',
+ '''L’appli Android est disponible sur <strong>Google Play</strong>. Là où Google Play n’est pas accessible, Pocket Option
+    propose un <strong>APK</strong> à télécharger sur son site. L’appli gère tous les types de trades, les indicateurs,
+    le trading social, les dépôts et les retraits.''',
+ 'Téléchargez l’appli Pocket Option',
+ 'sur Google Play, ou l’APK depuis le site officiel.',
+ '<li>Pour l’APK, autorisez l’installation depuis votre navigateur quand Android le demande.</li>',
+ '<li>Connectez-vous avec votre compte ou ouvrez la démo.</li>',
+ '<h2 id="iphone">iPhone et iPad</h2>',
+ '''Sur iOS, Pocket Option fonctionne en <strong>web app</strong>. Elle s’ajoute à l’écran d’accueil et s’ouvre en plein
+    écran comme une appli classique.''',
+ 'Ouvrez{" "}',
+ 'dans Safari.',
+ 'Touchez le bouton Partager, puis <strong>Sur l’écran d’accueil</strong>.',
+ '<li>Lancez Pocket Option depuis la nouvelle icône.</li>',
+ '<h2 id="desktop">Windows et macOS</h2>',
+ '''Il n’y a pas de logiciel à télécharger sur ordinateur. La plateforme complète tourne dans Chrome, Edge, Safari ou
+    Firefox : elle est toujours à jour et fonctionne sur n’importe quel système. Dans Chrome ou Edge, vous pouvez aussi
+    l’installer comme une appli depuis la barre d’adresse.''',
+ '<h2 id="telegram">Bot Telegram</h2>',
+ '''Pocket Option propose aussi un bot Telegram relié à votre compte. Pratique pour un coup d’œil rapide et les
+    notifications en déplacement ; pour l’analyse graphique, mieux vaut l’appli ou la plateforme web.''',
+ '<h2 id="compare">Quelle version choisir</h2>',
+ '<th>Version</th>\n        <th>Idéale pour</th>\n        <th>Installation</th>',
+ '<td>Plateforme web</td>\n        <td>Analyser sur grand écran</td>\n        <td>Aucune</td>',
+ '<td>Appli Android</td>\n        <td>Trader en déplacement</td>\n        <td>Google Play ou APK</td>',
+ '<td>Web app iOS</td>\n        <td>Utilisateurs d’iPhone et d’iPad</td>\n        <td>Sur l’écran d’accueil</td>',
+ '<td>Bot Telegram</td>\n        <td>Coups d’œil rapides, alertes</td>\n        <td>Ouvrir dans Telegram</td>',
+ 'Pas encore décidé ?{" "}',
+ 'Ouvrez la démo',
+ 'sur votre téléphone et votre ordinateur, et voyez ce que vous préférez.',
+]

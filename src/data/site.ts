@@ -51,6 +51,10 @@ export const FOOTER = [
       { href: "/bonus-promo-code/", label: "Bonus and promo codes" },
       { href: "/blog/", label: "Blog" },
       { href: "/faq/", label: "FAQ" },
+      { href: "/india/", label: "Pocket Option India", en: true },
+      { href: "/pakistan/", label: "Pocket Option Pakistan", en: true },
+      { href: "/nigeria/", label: "Pocket Option Nigeria", en: true },
+      { href: "/bangladesh/", label: "Pocket Option Bangladesh", en: true },
     ],
   },
   {

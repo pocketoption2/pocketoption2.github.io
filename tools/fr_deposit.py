@@ -1,0 +1,52 @@
+FR = [
+ '"Moyens de paiement" }',
+ '"Comment déposer" }',
+ '"Vérification" }',
+ '"Comment retirer" }',
+ '"Frais et délais" }',
+ '"En cas de retard de paiement" }',
+ 'title="Dépôt et retrait Pocket Option : méthodes, frais, délais"',
+ 'description="Déposez dès 5 $ avec 170+ moyens de paiement et retirez sans frais Pocket Option. Cartes, e-wallets, crypto, vérification et délais de retrait expliqués."',
+ 'h1="Dépôts et retraits sur Pocket Option"',
+ 'lead="Les dépôts commencent à 5 $ et Pocket Option ne prend aucune commission, ni à l’entrée ni à la sortie. Voici comment alimenter votre compte, vous faire vérifier et retirer sans retard."',
+ 'crumb="Dépôts et retraits"',
+ '<h2 id="methods">Moyens de paiement</h2>',
+ '''Pocket Option propose plus de 170 moyens de paiement. Ceux que vous voyez dans votre compte dépendent de votre pays
+    et de votre devise.''',
+ '<strong>Cartes :</strong> Visa, Mastercard et réseaux de cartes locaux.',
+ '<strong>E-wallets :</strong> Jeton, Volet, WebMoney, Apple Pay, Google Pay, Paytm, GrabPay et d’autres.',
+ '<strong>Virements bancaires et QR :</strong> UPI, QRIS, DuitNow, VietQR, PSE et d’autres réseaux locaux.',
+ '<strong>Mobile money :</strong> M-Pesa, MTN, Airtel, Orange, Vodacom et d’autres opérateurs en Afrique.',
+ '<strong>Crypto :</strong> Bitcoin, Ethereum, USDT sur plusieurs réseaux, Litecoin, Tron, Solana et d’autres.',
+ '<h2 id="deposit">Comment déposer</h2>',
+ 'Connectez-vous et ouvrez <strong>Finances → Dépôt</strong>.',
+ '<li>Choisissez un moyen de paiement et saisissez le montant, dès 5 $ pour la plupart des méthodes.</li>',
+ '''Ajoutez un code promo si vous en avez un. Lisez d’abord ses conditions, voir{" "}
+      <a href="/bonus-promo-code/">bonus et codes promo</a>.''',
+ '<li>Validez le paiement auprès de votre prestataire. La plupart des dépôts sont crédités en quelques minutes.</li>',
+ '<h2 id="verify">Vérification</h2>',
+ '''La vérification protège votre compte et elle est obligatoire avant tout retrait. Pocket Option demande vos
+    informations personnelles, une pièce d’identité avec photo et, dans certains cas, un justificatif de domicile.
+    Faites-la dès l’inscription pour gagner du temps plus tard.''',
+ '''Utilisez dès le départ votre vrai nom et vos vraies coordonnées. Un écart entre votre profil et vos documents ou
+    votre moyen de paiement est la cause la plus fréquente d’un retrait retardé.''',
+ '<h2 id="withdraw">Comment retirer</h2>',
+ 'Ouvrez <strong>Finances → Retrait</strong>.',
+ '<li>Choisissez un moyen utilisé pour déposer. Les règles anti-blanchiment imposent que les fonds repartent par le même canal.</li>',
+ '<li>Saisissez le montant et confirmez.</li>',
+ '''Pocket Option n’impose ni minimum ni maximum de retrait si vous n’avez pas de bonus de dépôt actif. Si un bonus est
+    encore actif, son montant est déduit de votre solde au moment du retrait.''',
+ '<h2 id="times">Frais et délais</h2>',
+ '<th>Méthode</th>\n        <th>Dépôt</th>\n        <th>Réception du retrait</th>',
+ '<td>Crypto</td>\n        <td>Quelques minutes, après confirmations du réseau</td>\n        <td>En général sous 24 h</td>',
+ '<td>E-wallets</td>\n        <td>Instantané à quelques minutes</td>\n        <td>En général sous 24 h</td>',
+ '<td>Mobile money, virements locaux</td>\n        <td>Instantané à quelques minutes</td>\n        <td>Le jour même à quelques jours</td>',
+ '<td>Cartes bancaires</td>\n        <td>Instantané</td>\n        <td>Plusieurs jours ouvrés</td>',
+ '''Pocket Option applique 0 % de frais sur les dépôts et les retraits. Votre banque, l’émetteur de votre carte ou le
+    réseau blockchain peuvent toutefois prélever leurs propres frais ou appliquer un taux de change.''',
+ '<h2 id="problems">En cas de retard de paiement</h2>',
+ '<li>Vérifiez que votre compte est entièrement vérifié.</li>',
+ '<li>Assurez-vous de retirer vers un moyen utilisé pour déposer.</li>',
+ '<li>Regardez si un bonus actif affecte votre solde.</li>',
+ '<li>Contactez le support Pocket Option depuis votre compte avec l’identifiant de la transaction.</li>',
+]

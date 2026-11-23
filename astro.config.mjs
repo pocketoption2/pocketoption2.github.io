@@ -18,6 +18,6 @@ export default defineConfig({
   integrations: [sitemap({
       filter: (page) => !page.includes("/go/"),
       lastmod: new Date(),
-      i18n: { defaultLocale: "en", locales: { en: "en", ru: "ru", ua: "uk" } },
+      i18n: { defaultLocale: "en", locales: { en: "en", ru: "ru", ua: "uk", fr: "fr" } },
     }), plainSitemap],
 });

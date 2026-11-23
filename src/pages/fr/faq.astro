@@ -1,0 +1,142 @@
+---
+import Base from "../../layouts/Base.astro";
+import PageHero from "../../components/PageHero.astro";
+import Faq from "../../components/Faq.astro";
+import EndCta from "../../components/EndCta.astro";
+import { faqSchema, type QA } from "../../data/faq";
+import { SITE } from "../../data/site";
+import { Image } from "astro:assets";
+import faqCover from "../../assets/covers/faq.png";
+
+const groups: { title: string; items: QA[] }[] = [
+  {
+    title: "À propos de Pocket Option",
+    items: [
+      {
+        q: "Qu’est-ce que Pocket Option ?",
+        a: "Pocket Option est une plateforme de trading en ligne lancée en 2017. Elle permet de trader devises, cryptos, actions, matières premières et indices dès 1 $ par trade, sur le web, Android, iPhone et Telegram.",
+      },
+      {
+        q: "PocketOption et Pocket Option, c’est la même chose ?",
+        a: "Oui. PocketOption est simplement l’écriture en un mot du même courtier et de la même plateforme, sur pocketoption.com.",
+      },
+      {
+        q: "Pocket Option est-il fiable ou une arnaque ?",
+        a: 'Il existe depuis 2017 et annonce plus de 10 millions d’inscrits. C’est un courtier offshore sans régulation de premier rang : il protège donc moins qu’un courtier régulé. Voir notre <a href="/fr/review/">avis</a>.',
+      },
+      {
+        q: "Dans quels pays Pocket Option n’est-il pas disponible ?",
+        a: "Pocket Option n’accepte pas les résidents de l’EEE, des États-Unis, du Royaume-Uni, d’Israël, du Japon, des Philippines et du Brésil.",
+      },
+    ],
+  },
+  {
+    title: "Compte et démo",
+    items: [
+      {
+        q: "Comment ouvrir un compte Pocket Option ?",
+        a: "Inscrivez-vous avec votre e-mail ou votre compte Google, confirmez votre e-mail, puis terminez la vérification dans votre profil avant votre premier retrait.",
+      },
+      {
+        q: "La démo Pocket Option est-elle gratuite ?",
+        a: 'Oui. La démo offre 50 000 $ virtuels, s’ouvre en un clic sans inscription et n’a pas de limite de durée. Voir la <a href="/fr/demo-account/">page du compte démo</a>.',
+      },
+      {
+        q: "Peut-on se connecter avec Google ?",
+        a: "Oui. Si vous vous êtes inscrit avec Google et souhaitez ensuite vous connecter par e-mail et mot de passe, définissez d’abord un mot de passe via la récupération d’accès.",
+      },
+      {
+        q: "Quels documents faut-il pour la vérification ?",
+        a: "Une pièce d’identité valide avec photo et, dans certains cas, un justificatif de domicile. Les informations de votre profil doivent correspondre à vos documents.",
+      },
+    ],
+  },
+  {
+    title: "Dépôts et retraits",
+    items: [
+      { q: "Quel est le dépôt minimum ?", a: "5 $ pour la plupart des moyens de paiement. Le montant minimum par trade est de 1 $." },
+      {
+        q: "Pocket Option prend-il des frais ?",
+        a: "Pocket Option ne prend aucune commission sur les dépôts et les retraits. Votre banque, l’émetteur de votre carte ou le réseau crypto peuvent appliquer leurs propres frais.",
+      },
+      {
+        q: "Y a-t-il un retrait minimum ?",
+        a: "Aucun minimum ni maximum de retrait ne s’applique si vous n’avez pas de bonus de dépôt actif.",
+      },
+      {
+        q: "Combien de temps prend un retrait ?",
+        a: "Après vérification, les retraits vers e-wallets et en crypto arrivent souvent en moins de 24 h. Par carte ou virement bancaire, comptez plusieurs jours ouvrés.",
+      },
+    ],
+  },
+  {
+    title: "Trading",
+    items: [
+      {
+        q: "Que peut-on trader sur Pocket Option ?",
+        a: "Plus de 100 actifs : paires de devises, cryptomonnaies, actions, matières premières et indices, plus des versions OTC ouvertes le week-end.",
+      },
+      {
+        q: "Quel est le gain maximum ?",
+        a: "Un trade simple rapporte en général jusqu’à 92 % selon l’actif et l’heure. Les trades express, qui combinent plusieurs prévisions, peuvent rapporter jusqu’à 218 %.",
+      },
+      {
+        q: "Pocket Option propose-t-il le copy trading ?",
+        a: "Oui. Le trading social permet de copier automatiquement d’autres traders en fixant vos propres limites.",
+      },
+      {
+        q: "Existe-t-il une appli Pocket Option ?",
+        a: 'Oui : pour Android (Google Play ou APK), pour iPhone et iPad en web app, dans les navigateurs sur ordinateur et sur Telegram. Voir la <a href="/fr/app/">page de l’appli</a>.',
+      },
+    ],
+  },
+];
+const all = groups.flatMap((g) => g.items);
+const crumbs = [{ href: "/fr/", label: "Accueil" }, { label: "FAQ" }];
+const bc = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Accueil", item: `${SITE.url}/fr/` },
+    { "@type": "ListItem", position: 2, name: "FAQ", item: `${SITE.url}/fr/faq/` },
+  ],
+};
+---
+
+<Base
+  ogImage="/og/faq.jpg"
+  title="FAQ Pocket Option : compte, dépôts, retraits et appli"
+  description="Réponses rapides sur Pocket Option : fiable ou arnaque, pays, démo, vérification, dépôt minimum, délais de retrait, gains et appli PocketOption."
+  schema={[faqSchema(all), bc]}
+>
+  <PageHero
+    slot="hero"
+    title="FAQ Pocket Option"
+    lead="Des réponses claires aux questions les plus posées sur Pocket Option, de l’ouverture du compte jusqu’au retrait."
+    crumbs={crumbs}
+    updated={SITE.updated}
+  />
+  <div class="w" style="padding-top:72px">
+    <figure class="cover" style="max-width:740px">
+      <Image
+        src={faqCover}
+        widths={[640, 960, 1200]}
+        sizes="(max-width: 800px) 92vw, 740px"
+        alt="FAQ Pocket Option"
+        loading="eager"
+      />
+    </figure>
+  </div>
+  {groups.map((g, i) => (
+    <section class={i % 2 ? "alt" : ""}>
+      <div class="w faq">
+        <div class="sh">
+          <h2>{g.title}</h2>
+        </div>
+        <Faq items={g.items} openFirst={i === 0} />
+      </div>
+    </section>
+  ))}
+  <div style="height:112px" />
+  <EndCta />
+</Base>

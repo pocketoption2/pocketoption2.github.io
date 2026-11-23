@@ -1,0 +1,103 @@
+---
+import Article from "../layouts/Article.astro";
+import { go } from "../data/site";
+const toc = [
+  { id: "available", label: "Availability" },
+  { id: "signup", label: "Sign up and log in" },
+  { id: "payments", label: "Payment methods" },
+  { id: "withdraw", label: "Withdrawals" },
+  { id: "legal", label: "Rules and risks" },
+  { id: "faq", label: "FAQ" },
+];
+const schema = [{ "@context": "https://schema.org", "@type": "FAQPage", mainEntity: [{"@type": "Question", "name": "Can I deposit with UPI on Pocket Option?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. UPI appears in the deposit list for Indian accounts, along with IMPS, Paytm, PhonePe and GPay. The minimum deposit is $5 for most methods."}}, {"@type": "Question", "name": "What is the minimum deposit in rupees?", "acceptedAnswer": {"@type": "Answer", "text": "The minimum is set in US dollars: $5 for most methods. The rupee amount shown at checkout depends on the exchange rate of the day."}}, {"@type": "Question", "name": "Is Pocket Option legal in India?", "acceptedAnswer": {"@type": "Answer", "text": "Pocket Option is an offshore broker and is not authorised by the RBI or SEBI. Check the RBI Alert List and your own legal position before trading."}}, {"@type": "Question", "name": "How do I withdraw to my bank in India?", "acceptedAnswer": {"@type": "Answer", "text": "Open Finance → Withdrawal after verifying your account and choose the same method you used to deposit, such as UPI or IMPS."}}] }];
+---
+
+<Article
+  cover="deposit-withdrawal"
+  title="Pocket Option India: Login, UPI Deposits & App Guide"
+  description="Pocket Option in India: how to sign up and log in, deposit from $5 with UPI, IMPS, Paytm, PhonePe or GPay, withdraw, and use the app. Risks explained."
+  h1="Pocket Option in India"
+  lead="How Indian traders sign up, log in, deposit with UPI and withdraw on Pocket Option, plus the legal and tax points to check before you trade."
+  crumb="India"
+  toc={toc}
+  schema={schema}
+>
+  <h2 id="available">Is Pocket Option available in India?</h2>
+  <p>Pocket Option accepts registrations from India and shows Indian payment methods such as UPI when you deposit from an Indian account. India is not on the broker's list of restricted countries. Account currency can be US dollars; local payments are converted from INR (Indian rupee) at checkout.</p>
+
+  <h2 id="signup">Sign up and log in</h2>
+  <ol>
+    <li>Open Pocket Option and register with your email or Google account.</li>
+    <li>Confirm your email, then try the <a href="/demo-account/">free $50,000 demo</a> before depositing.</li>
+    <li>Complete verification in your profile with an ID that matches your name. It is required before your first withdrawal.</li>
+  </ol>
+  <p>Most traders in India use the Android app or a mobile browser. If your network is slow, the web platform at pocketoption.com loads a lighter mobile version automatically. See the <a href="/app/">app guide</a> for install steps.</p>
+  <p>
+    <a href={go("register")} rel="sponsored nofollow">Open a Pocket Option account →</a>
+  </p>
+
+  <h2 id="payments">Payment methods in India</h2>
+  <p>These local methods are listed on Pocket Option's official payment page, all with 0% Pocket Option commission. The minimum deposit is $5 for most methods. What you see at checkout can vary by account.</p>
+  <table>
+    <thead>
+      <tr>
+        <th>Method</th>
+        <th>Type</th>
+        <th>How it works</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>UPI</td>
+        <td>Bank</td>
+        <td>Pay from any UPI app linked to your bank account.</td>
+      </tr>
+      <tr>
+        <td>IMPS</td>
+        <td>Bank</td>
+        <td>Instant bank transfer, useful for larger amounts.</td>
+      </tr>
+      <tr>
+        <td>Paytm</td>
+        <td>Bank</td>
+        <td>Pay through the Paytm app or wallet.</td>
+      </tr>
+      <tr>
+        <td>PhonePe</td>
+        <td>Bank</td>
+        <td>UPI payment from the PhonePe app.</td>
+      </tr>
+      <tr>
+        <td>GPay</td>
+        <td>Bank</td>
+        <td>UPI payment from Google Pay.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>Cards, crypto such as USDT and Bitcoin, and e-wallets like Jeton and Volet are also available worldwide.</p>
+  <h3>Deposit tips</h3>
+  <ul>
+    <li>Use the UPI ID or bank account in your own name. Third-party payments are a common reason for rejected withdrawals.</li>
+    <li>Keep the UPI transaction reference until the deposit appears in your balance.</li>
+    <li>Your bank may show the payment under a payment processor's name rather than Pocket Option.</li>
+  </ul>
+
+  <h2 id="withdraw">Withdrawals</h2>
+  <p>Open <strong>Finance → Withdrawal</strong> after your account is verified. Anti-money-laundering rules require funds to go back to a method you used to deposit. Pocket Option sets no minimum withdrawal when no deposit bonus is active. Full details are on the <a href="/deposit-withdrawal/">deposits and withdrawals page</a>.</p>
+
+  <h2 id="legal">Rules and risks in India</h2>
+  <p>India's rules on online forex and binary-style trading are strict. The Reserve Bank of India publishes an Alert List of unauthorised forex platforms, and Indian residents are generally allowed to trade forex only in permitted INR pairs through authorised brokers on Indian exchanges. Check the current RBI Alert List and consider getting local advice before you deposit. Profits may also be taxable.</p>
+  <p>Short-term trading carries a high risk of loss. Only trade money you can afford to lose, and read our <a href="/review/">Pocket Option review</a> before opening a real account.</p>
+
+  <h2 id="faq">Pocket Option India FAQ</h2>
+  <h3>Can I deposit with UPI on Pocket Option?</h3>
+  <p>Yes. UPI appears in the deposit list for Indian accounts, along with IMPS, Paytm, PhonePe and GPay. The minimum deposit is $5 for most methods.</p>
+  <h3>What is the minimum deposit in rupees?</h3>
+  <p>The minimum is set in US dollars: $5 for most methods. The rupee amount shown at checkout depends on the exchange rate of the day.</p>
+  <h3>Is Pocket Option legal in India?</h3>
+  <p>Pocket Option is an offshore broker and is not authorised by the RBI or SEBI. Check the RBI Alert List and your own legal position before trading.</p>
+  <h3>How do I withdraw to my bank in India?</h3>
+  <p>Open Finance → Withdrawal after verifying your account and choose the same method you used to deposit, such as UPI or IMPS.</p>
+
+  <p>Other countries: <a href="/pakistan/">Pocket Option Pakistan</a> · <a href="/nigeria/">Pocket Option Nigeria</a> · <a href="/bangladesh/">Pocket Option Bangladesh</a></p>
+</Article>
