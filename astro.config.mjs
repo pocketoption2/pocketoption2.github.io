@@ -15,5 +15,9 @@ export default defineConfig({
   site: "https://pocketoption2.github.io",
   trailingSlash: "always",
   build: { format: "directory" },
-  integrations: [sitemap({ filter: (page) => !page.includes("/go/"), lastmod: new Date() }), plainSitemap],
+  integrations: [sitemap({
+      filter: (page) => !page.includes("/go/"),
+      lastmod: new Date(),
+      i18n: { defaultLocale: "en", locales: { en: "en", ru: "ru", ua: "uk" } },
+    }), plainSitemap],
 });

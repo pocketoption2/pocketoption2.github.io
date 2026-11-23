@@ -1,25 +1,23 @@
 ---
 import { go } from "../data/site";
+import { getLang, t } from "../i18n";
+const s = t(getLang(Astro.url));
 ---
 
 <div class="card">
-  <h3>Pocket Option at a glance</h3>
+  <h3>{s.side.title}</h3>
   <dl>
-    <dt>Minimum deposit</dt>
-    <dd>$5</dd>
-    <dt>Minimum trade</dt>
-    <dd>$1</dd>
-    <dt>Demo balance</dt>
-    <dd>$50,000</dd>
-    <dt>Assets</dt>
-    <dd>100+</dd>
-    <dt>Founded</dt>
-    <dd>2017</dd>
+    {s.side.rows.map(([k, v]) => (
+      <>
+        <dt>{k}</dt>
+        <dd>{v}</dd>
+      </>
+    ))}
   </dl>
   <a class="btn btn-p" href={go("register")} rel="sponsored nofollow">
-    Open an account
+    {s.side.open}
   </a>
   <a class="btn btn-g" href={go("demo")} rel="sponsored nofollow">
-    Try the free demo
+    {s.tryFree}
   </a>
 </div>

@@ -6,7 +6,9 @@ interface Props {
   updated?: string;
 }
 const { title, lead, crumbs, updated } = Astro.props;
-const fmt = (d: string) => new Date(d).toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" });
+import { LANGS, getLang, t } from "../i18n";
+const lang = getLang(Astro.url);
+const fmt = (d: string) => new Date(d).toLocaleDateString(LANGS[lang].date, { day: "numeric", month: "long", year: "numeric" });
 ---
 
 <div class="w ph-hero">
@@ -21,7 +23,7 @@ const fmt = (d: string) => new Date(d).toLocaleDateString("en-GB", { day: "numer
   <p class="lead">{lead}</p>
   {updated && (
     <p class="meta">
-      Updated <time datetime={updated}>{fmt(updated)}</time>
+      {t(lang).updated} <time datetime={updated}>{fmt(updated)}</time>
     </p>
   )}
   <slot />

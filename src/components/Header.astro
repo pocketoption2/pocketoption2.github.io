@@ -1,32 +1,62 @@
 ---
 import Logo from "./Logo.astro";
 import { NAV, go } from "../data/site";
+import { LANGS, getLang, basePath, lp, t, type Lang } from "../i18n";
 const path = Astro.url.pathname;
+const lang = getLang(Astro.url);
+const s = t(lang);
+const base = basePath(path);
+const home = lp(lang, "/");
+const nav = NAV.map((l, i) => ({ href: lp(lang, l.href), label: s.nav[i] }));
+const langs = (Object.keys(LANGS) as Lang[]).map((k) => ({ k, ...LANGS[k], href: lp(k, base) === base && k !== "en" ? `/${k}/` : lp(k, base) }));
 ---
 
 <header class="site">
   <div class="w hd">
-    <a class="logo" href="/" aria-label="Pocket Option home">
+    <a class="logo" href={home} aria-label="PocketOption">
       <Logo />
       <span class="wm">
         <b>Pocket</b>Option
       </span>
     </a>
     <nav aria-label="Main">
-      {NAV.map((l) => (
+      {nav.map((l) => (
         <a href={l.href} aria-current={path.startsWith(l.href) ? "page" : undefined}>
           {l.label}
         </a>
       ))}
     </nav>
     <div class="r">
+      <div class="lng">
+        <button class="lng-b" type="button" aria-haspopup="true" aria-expanded="false" aria-label={s.language}>
+          <svg class="ico" viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="12" cy="12" r="9" />
+            <path d="M3 12h18M12 3c2.5 2.7 3.8 5.7 3.8 9s-1.3 6.3-3.8 9c-2.5-2.7-3.8-5.7-3.8-9S9.5 5.7 12 3z" />
+          </svg>
+          <span>{LANGS[lang].short}</span>
+          <svg class="ico chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" /></svg>
+        </button>
+        <ul class="lng-m">
+          {langs.map((l) => (
+            <li>
+              <a href={l.href} hreflang={l.hreflang} lang={l.html} aria-current={l.k === lang ? "true" : undefined}>
+                <img src={`/flags/${l.k}.svg`} width="20" height="14" alt="" />
+                {l.name}
+                {l.k === lang && (
+                  <svg class="ico ok" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5" /></svg>
+                )}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
       <a class="t" href={go("demo")} rel="sponsored nofollow">
-        Try demo
+        {s.tryDemo}
       </a>
       <a class="btn btn-p btn-sm" href={go("register")} rel="sponsored nofollow">
-        Open account
+        {s.openAccount}
       </a>
-      <button class="burger" type="button" aria-label="Open menu" aria-controls="drawer" aria-expanded="false">
+      <button class="burger" type="button" aria-label={s.openMenu} aria-controls="drawer" aria-expanded="false">
         <span></span>
         <span></span>
         <span></span>
@@ -37,30 +67,30 @@ const path = Astro.url.pathname;
 <div class="scrim" data-close></div>
 <aside class="drawer" id="drawer" aria-label="Menu" aria-hidden="true">
   <div class="dh">
-    <a class="logo" href="/">
+    <a class="logo" href={home}>
       <Logo />
       <span class="wm">
         <b>Pocket</b>Option
       </span>
     </a>
-    <button class="x" type="button" aria-label="Close menu" data-close>
+    <button class="x" type="button" aria-label={s.closeMenu} data-close>
       &times;
     </button>
   </div>
   <nav class="dn" aria-label="Mobile">
-    {NAV.map((l) => (
+    {nav.map((l) => (
       <a href={l.href}>{l.label}</a>
     ))}
   </nav>
   <div class="dc">
     <a class="btn btn-p" href={go("register")} rel="sponsored nofollow">
-      Open a Pocket Option account
+      {s.openPo}
     </a>
     <a class="btn btn-g" href={go("demo")} rel="sponsored nofollow">
-      Try the free demo
+      {s.tryFree}
     </a>
   </div>
-  <p class="dr">Trading involves risk. Only invest what you can afford to lose.</p>
+  <p class="dr">{s.drawerRisk}</p>
 </aside>
 <script>
   const body = document.body;
@@ -75,5 +105,17 @@ const path = Astro.url.pathname;
   btn.addEventListener("click", () => set(true));
   document.querySelectorAll("[data-close]").forEach((el) => el.addEventListener("click", () => set(false)));
   document.addEventListener("keydown", (e) => e.key === "Escape" && set(false));
+  const lng = document.querySelector<HTMLElement>(".lng")!;
+  const lb = lng.querySelector<HTMLButtonElement>(".lng-b")!;
+  const setL = (open: boolean) => {
+    lng.classList.toggle("on", open);
+    lb.setAttribute("aria-expanded", String(open));
+  };
+  lb.addEventListener("click", (e) => {
+    e.stopPropagation();
+    setL(!lng.classList.contains("on"));
+  });
+  document.addEventListener("click", (e) => !lng.contains(e.target as Node) && setL(false));
+  document.addEventListener("keydown", (e) => e.key === "Escape" && setL(false));
   matchMedia("(min-width: 1101px)").addEventListener("change", (e) => e.matches && set(false));
 </script>

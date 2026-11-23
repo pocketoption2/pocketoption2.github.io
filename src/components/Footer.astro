@@ -1,6 +1,9 @@
 ---
 import Logo from "./Logo.astro";
 import { FOOTER } from "../data/site";
+import { getLang, lp, t } from "../i18n";
+const lang = getLang(Astro.url);
+const s = t(lang);
 const year = new Date().getFullYear();
 ---
 
@@ -8,53 +11,46 @@ const year = new Date().getFullYear();
   <div class="w">
     <div class="ft">
       <div>
-        <a class="logo" href="/">
+        <a class="logo" href={lp(lang, "/")}>
           <Logo size={26} />
           <span class="wm">
             <b>Pocket</b>Option
           </span>
         </a>
-        <p>
-          Pocket Option is a web trading platform for currencies, crypto, stocks and commodities, with a $5 minimum
-          deposit, $1 trades and a free $50,000 demo account.
-        </p>
+        <p>{s.footAbout}</p>
       </div>
-      {FOOTER.map((col) => (
+      {FOOTER.map((col, i) => (
         <details open>
           <summary>
-            <h2>{col.title}</h2>
+            <h2>{s.footCols[i]}</h2>
           </summary>
           <ul>
             {col.links.map((l) => (
               <li>
-                <a href={l.href}>{l.label}</a>
+                <a href={lp(lang, l.href)}>{s.footLinks[l.href] ?? l.label}</a>
               </li>
             ))}
           </ul>
         </details>
       ))}
     </div>
-    <p class="risk">
-      Risk warning: trading financial instruments involves significant risk and may result in the loss of your invested
-      capital. Only trade with money you can afford to lose. This website is for information only and is not investment
-      advice. Some links are affiliate links; we may earn a commission at no extra cost to you.
-    </p>
+    <p class="risk">{s.risk}</p>
   </div>
   <div class="copy">
     <div class="w">
-      <span>© {year} pocketoption2.github.io. All rights reserved.</span>
+      <span>© {year} pocketoption2.github.io. {s.rights}</span>
       <ul>
         <li>
-          <a href="/privacy/">Privacy</a>
+          <a href="/privacy/">{s.footLinks["/privacy/"]}</a>
         </li>
         <li>
-          <a href="/disclaimer/">Disclaimer</a>
+          <a href="/disclaimer/">{s.footLinks["/disclaimer/"]}</a>
         </li>
         <li>
-          <a href="/risk-warning/">Risk warning</a>
+          <a href="/risk-warning/">{s.footLinks["/risk-warning/"]}</a>
         </li>
         <li>
-          <a href="/contact/">Contact</a>
+          <a href="/contact/">{s.footLinks["/contact/"]}</a>
         </li>
       </ul>
     </div>

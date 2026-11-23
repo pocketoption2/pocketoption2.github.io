@@ -5,6 +5,8 @@ import SideCard from "../components/SideCard.astro";
 import EndCta from "../components/EndCta.astro";
 import { Image } from "astro:assets";
 import { SITE } from "../data/site";
+import { LANGS, getLang, lp, t } from "../i18n";
+const lang = getLang(Astro.url);
 const covers = import.meta.glob<{ default: ImageMetadata }>("../assets/covers/*.png", { eager: true });
 
 interface Props {
@@ -38,7 +40,7 @@ const {
 const url = new URL(Astro.url.pathname, SITE.url).href;
 const coverImg = cover ? covers[`../assets/covers/${cover}.png`]?.default : undefined;
 const ogImage = cover ? `/og/${cover}.jpg` : "/og.png";
-const crumbs = [{ href: "/", label: "Home" }, ...(parent ? [parent] : []), { label: crumb }];
+const crumbs = [{ href: lp(lang, "/"), label: t(lang).home }, ...(parent ? [parent] : []), { label: crumb }];
 const bc = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
@@ -59,7 +61,7 @@ const art = article
         mainEntityOfPage: url,
         datePublished: published ?? updated,
         dateModified: updated,
-        inLanguage: "en",
+        inLanguage: LANGS[lang].hreflang,
         image: new URL(ogImage, SITE.url).href,
         author: {
           "@type": "Organization",
@@ -97,8 +99,8 @@ const art = article
     </article>
     <aside class="aside">
       {toc.length > 0 && (
-        <nav class="card toc" aria-label="On this page">
-          <h3>On this page</h3>
+        <nav class="card toc" aria-label={t(lang).toc}>
+          <h3>{t(lang).toc}</h3>
           <ol>
             {toc.map((t) => (
               <li>

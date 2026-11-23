@@ -1,5 +1,7 @@
 ---
 import { PAYMENTS } from "../data/payments";
+import { getLang, t } from "../i18n";
+const s = t(getLang(Astro.url));
 ---
 
 <ul class="pay">
@@ -16,7 +18,4 @@ import { PAYMENTS } from "../data/payments";
     ),
   )}
 </ul>
-<p class="pnote">
-  Plus Jeton, Volet, WebMoney, Tron, Solana, local bank transfers, mobile money and 160+ more, depending on your
-  country.
-</p>
+<p class="pnote">{s.payNote}</p>

@@ -1,23 +1,22 @@
 ---
 import { go } from "../data/site";
-const {
-  title = "Try Pocket Option risk-free on the demo",
-  text = "Practise with $50,000 in virtual funds and learn the platform before you trade with real money.",
-} = Astro.props;
+import { getLang, t } from "../i18n";
+const s = t(getLang(Astro.url));
+const { title = s.endTitle, text = s.endText } = Astro.props;
 ---
 
 <div class="w">
   <div class="end">
     <div>
-      <h2 set:html={title.replace("risk-free", '<span class="nw">risk-free</span>')} />
+      <h2 set:html={title.replace(s.endNowrap, `<span class="nw">${s.endNowrap}</span>`)} />
       <p>{text}</p>
     </div>
     <div class="cta">
       <a class="btn btn-p" href={go("demo")} rel="sponsored nofollow">
-        Try the free demo
+        {s.tryFree}
       </a>
       <a class="btn btn-g" href={go("register")} rel="sponsored nofollow">
-        Open account
+        {s.openAccount}
       </a>
     </div>
   </div>

